@@ -1,6 +1,11 @@
 import './CartScreen.css'
 
 const CartScreen = () => {
+
+        //   {
+        //     user ? <Redirect to="/cart" /> : <Redirect to="/products" />;
+        //   }
+
     return (
         <div className="cartscreen">
             Cart Screen
@@ -8,4 +13,4 @@ const CartScreen = () => {
     )
 }
 
-export default CartScreen
+export default CartScreen;
