@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({user}) => {
   return (
     <nav className="navbar">
       {/* logo */}
@@ -19,12 +19,19 @@ const Navbar = () => {
         <li>
           <Link to="/products">Products</Link>
         </li>
+        {user ? 
+        <li>
+          <Link to="/profile">
+            {/* Icon */}
+            Profile
+          </Link>
+        </li> :
         <li>
           <Link to="/login">
             {/* Icon */}
             Login
           </Link>
-        </li>
+        </li>}
         <li>
           <Link to="/cart" className="cart__link">
             <span>

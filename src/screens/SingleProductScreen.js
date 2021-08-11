@@ -1,8 +1,8 @@
-import './ProductScreen.css'
+import './SingleProductScreen.css'
 
 const ProductScreen = () => {
     return (
-        <div className="productscreen">
+        <div className="singleproductscreen">
             Product Screen
         </div>
     )
