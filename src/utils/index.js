@@ -52,3 +52,60 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
     console.log(error);
   }
 };
+
+export const updateUserDetails = async (
+  e,
+  email,
+  pass,
+  name,
+  surname,
+  street,
+  city,
+  postcode,
+  user,
+  setUser
+) => {
+  e.preventDefault();
+
+  try {
+    let response;
+    response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email,
+        password: pass,
+        name: name,
+        surname: surname,
+        street: street,
+        city: city,
+        postcode: postcode,
+        currentUser: user,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+    setUser(data.username);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteUser = async (user, setUser) => {
+  try {
+    let response;
+    if (user) {
+      response = await fetch(`${process.env.REACT_APP_REST_API}users/${user}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${localStorage.removeItem("MyToken")}`,
+        },
+        username: user,
+      });
+    }
+    await response.json();
+    setUser();
+  } catch (error) {
+    console.log(error);
+  }
+};
