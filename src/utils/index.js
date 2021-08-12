@@ -64,6 +64,7 @@ export const findAllFish = async (setStock) => {
   try {
     response = await fetch(`${process.env.REACT_APP_REST_API}fishAll`);
     const data = await response.json();
+    console.log(data);
     setStock(data.fish);
   } catch (error) {
     console.log(error);
