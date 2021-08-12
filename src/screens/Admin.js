@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createFish, deleteStock } from "../utils";
 import { Redirect } from "react-router";
 
-const Admin = ({ admin, setAdmin, stock, setStock }) => {
+const Admin = ({setUser, admin, setAdmin, stock, setStock }) => {
  const [name, setName] = useState();
  const [scientific, setScientific] = useState();
  const [img, setImg] = useState();
@@ -22,6 +22,7 @@ const Admin = ({ admin, setAdmin, stock, setStock }) => {
     e.preventDefault();
     localStorage.removeItem("MyToken");
     setAdmin();
+    setUser();
   };
 
   return (
