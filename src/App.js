@@ -60,7 +60,12 @@ useEffect(() => {
             <Profile user={user} setUser={setUser} />
           </Route>
           <Route exact path="/admin">
-            <Admin admin={admin} setAdmin={setAdmin} />
+            <Admin
+              admin={admin}
+              setAdmin={setAdmin}
+              stock={stock}
+              setStock={setStock}
+            />
           </Route>
         </Switch>
       </main>

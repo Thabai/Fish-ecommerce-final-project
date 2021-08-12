@@ -7,7 +7,7 @@ import StockBox from '../components/stockBox';
 const Home = ({ stock, setStock }) => {
   useEffect(() => {
     findAllFish(setStock);
-  }, [stock]);
+  }, []);
 
   return (
     <div className="pageContainer">
