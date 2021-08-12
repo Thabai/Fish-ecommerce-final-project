@@ -18,6 +18,7 @@ import Navbar from './components/Navbar';
 const App = () => {
 const [user, setUser] = useState();
 const [admin, setAdmin] = useState();
+const [stock, setStock] = useState();
 
 useEffect(() => {
   authUser(setUser);
@@ -32,7 +33,7 @@ useEffect(() => {
         <Switch>
           {/* Home screen */}
           <Route exact path="/">
-            <HomeScreen user={user} setUser={setUser} />
+            <HomeScreen stock={stock} setStock={setStock} />
           </Route>
           {/* Products screen */}
           <Route exact path="/products">

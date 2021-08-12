@@ -1,11 +1,18 @@
 import './HomeScreen.css'
+import React, { useEffect } from "react";
+import { findAllFish } from '../utils';
 
-const HomeScreen = () => {
-    return (
-        <div className="homescreen">
-            This is the Home Screen
-        </div>
-    )
-}
+const Home = ({ stock, setStock }) => {
+  useEffect(() => {
+    findAllFish(setStock);
+  }, [stock]);
 
-export default HomeScreen
+  return (
+    <div className="pageContainer">
+        <h2>Available Fish</h2>
+        {/* <Card ={stock}/> */}
+    </div>
+  );
+};
+
+export default Home;
