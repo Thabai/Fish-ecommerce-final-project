@@ -1,3 +1,4 @@
+//login
 export const authUser = async (setUser) => {
   if (localStorage.MyToken) {
     try {
@@ -57,6 +58,20 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
   }
 };
 
+//stock
+export const findAllFish = async (setStock) => {
+  let response;
+  try {
+    response = await fetch(`${process.env.REACT_APP_REST_API}fishAll`);
+    const data = await response.json();
+    setStock(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+//Users 
 export const updateUserDetails = async (
   e,
   email,
@@ -113,3 +128,5 @@ export const deleteUser = async (user, setUser) => {
     console.log(error);
   }
 };
+
+//admin
