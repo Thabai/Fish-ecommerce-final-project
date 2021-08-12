@@ -61,6 +61,7 @@ useEffect(() => {
           </Route>
           <Route exact path="/admin">
             <Admin
+              setUser={setUser}
               admin={admin}
               setAdmin={setAdmin}
               stock={stock}
