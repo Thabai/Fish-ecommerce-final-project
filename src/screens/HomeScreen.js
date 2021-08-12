@@ -5,7 +5,7 @@ import { findAllFish } from '../utils';
 const Home = ({ stock, setStock }) => {
   useEffect(() => {
     findAllFish(setStock);
-  }, [stock]);
+  }, []);
 
   return (
     <div className="pageContainer">

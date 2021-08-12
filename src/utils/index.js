@@ -64,7 +64,7 @@ export const findAllFish = async (setStock) => {
   try {
     response = await fetch(`${process.env.REACT_APP_REST_API}fishAll`);
     const data = await response.json();
-    setStock(data);
+    setStock(data.fish);
   } catch (error) {
     console.log(error);
   }
@@ -130,3 +130,67 @@ export const deleteUser = async (user, setUser) => {
 };
 
 //admin
+export const createFish = async (
+  e,
+  name,
+  scientific,
+  img,
+  hab,
+  desc,
+  temperature,
+  temperament,
+  food,
+  social,
+  breeding,
+  quant,
+  price,
+  setStock
+) => {
+  e.preventDefault();
+  try {
+    let response;
+    let compat = {
+      temperature: temperature,
+      temperament: temperament,
+      food: food,
+      social: social,
+      breeding: breeding,
+    };
+      response = await fetch(`${process.env.REACT_APP_REST_API}fish`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name,
+          scientific: scientific,
+          img: img,
+          habitat: hab,
+          description: desc,
+          compatibility: compat,
+          quantity: quant,
+          price: price,
+      })
+    });
+      const data = await response.json();
+      setStock(data.fish.name);
+  } catch (error) {
+    console.log(error);
+}};
+
+
+export const deleteStock = async (e, del, setStock) => {
+  e.preventDefault();
+  try {
+    let response;
+      response = await fetch(`${process.env.REACT_APP_REST_API}fish/${del}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: del
+      })
+      });
+    await response.json();
+    setStock();
+  } catch (error) {
+    console.log(error);
+  }
+};
