@@ -9,6 +9,7 @@ import ProductsScreen from "./screens/ProductsScreen";
 import SingleProductScreen from "./screens/SingleProductScreen";
 import LoginScreen from "./screens/LoginScreen";
 import Profile from "./screens/Profile";
+import Admin from "./screens/Admin";
 import { authUser } from "./utils";
 
 // Components
@@ -16,6 +17,7 @@ import Navbar from './components/Navbar';
 
 const App = () => {
 const [user, setUser] = useState();
+const [admin, setAdmin] = useState();
 
 useEffect(() => {
   authUser(setUser);
@@ -23,7 +25,7 @@ useEffect(() => {
 
   return (
     <Router>
-      <Navbar user={user} />
+      <Navbar user={user} admin={admin} />
       {/* SideDrawer */}
       {/* Backdrop */}
       <main>
@@ -46,10 +48,18 @@ useEffect(() => {
           </Route>
           {/* Login page */}
           <Route exact path="/login">
-            <LoginScreen user={user} setUser={setUser} />
+            <LoginScreen
+              user={user}
+              setUser={setUser}
+              admin={admin}
+              setAdmin={setAdmin}
+            />
           </Route>
           <Route exact path="/profile">
             <Profile user={user} setUser={setUser} />
+          </Route>
+          <Route exact path="/admin">
+            <Admin admin={admin} setAdmin={setAdmin} />
           </Route>
         </Switch>
       </main>

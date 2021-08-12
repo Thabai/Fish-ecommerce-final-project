@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({user}) => {
+const Navbar = ({user, admin}) => {
   return (
     <nav className="navbar">
       {/* logo */}
@@ -19,7 +19,13 @@ const Navbar = ({user}) => {
         <li>
           <Link to="/products">Products</Link>
         </li>
-        {user ? 
+        {admin ? 
+        <li>
+          <Link to="admin">
+            Admin
+          </Link>
+        </li> :
+        user ? 
         <li>
           <Link to="/profile">
             {/* Icon */}

@@ -13,7 +13,7 @@ export const authUser = async (setUser) => {
   }
 };
 
-export const fetchUsers = async (e, username, email, pass, name, surname, street, city, postcode, setUser) => {
+export const fetchUsers = async (e, username, email, pass, name, surname, street, city, postcode, setUser, setUserAdmin) => {
   e.preventDefault();
   try {
     let response;
@@ -47,7 +47,11 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
     console.log(data);
+    if (data.user.admin === true) {
+      setUserAdmin(data.user.admin);
+    } else {
     setUser(data.user.username);
+    }
   } catch (error) {
     console.log(error);
   }
