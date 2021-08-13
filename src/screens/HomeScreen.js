@@ -11,10 +11,13 @@ const Home = ({ stock, setStock }) => {
 
   return (
     <div className="pageContainer">
+      <div>
         <h2>Available Fish</h2>
+        </div>
+        <div className="main">
         {/* <Card ={stock}/> */}
         <BoxCard stock={stock}/>
-    </div>
+    </div></div>
   );
 };
 

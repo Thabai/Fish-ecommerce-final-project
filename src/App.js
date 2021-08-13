@@ -18,7 +18,7 @@ import Navbar from './components/Navbar';
 const App = () => {
 const [user, setUser] = useState();
 const [admin, setAdmin] = useState();
-const [stock, setStock] = useState();
+const [stock, setStock] = useState([]);
 
 useEffect(() => {
   authUser(setUser);

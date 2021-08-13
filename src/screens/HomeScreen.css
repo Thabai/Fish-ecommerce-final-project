@@ -1,0 +1,28 @@
+body {
+  flex-direction: row;
+  flex-wrap: wrap;
+  object-fit: stretch;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: absolute;
+  background-image: url("/src/images/bg.jpeg");
+  width: 100vw !important;
+}
+.pageContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    max-height: auto;
+    justify-content: space-around;
+}
+.main {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+h2 {
+    font-size: xx-large;
+    color: white;
+}
