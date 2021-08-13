@@ -6,11 +6,11 @@ const StockBox = ({data}) => {
     <div className="stock">
       <li>
       <img src = {data.img} alt=""></img>     
-        <p>{data.name}</p>
+       <p className="cardName">{data.name}</p>
         <p>{data.scientific}</p>
-        <p>{data.description}</p>
-        <p>{data.habitat}</p>
-        <h3>{data.price}</h3>
+        <p>About: {data.description}</p>
+        <p>Water Type: {data.habitat}</p>
+        <p className="price">Price: £{data.price}</p>
       </li>
     </div>
   );
