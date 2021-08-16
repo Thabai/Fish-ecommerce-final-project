@@ -22,6 +22,7 @@ const [stock, setStock] = useState([]);
 const [basket, setBasket] = useState([]);
 const [prices, setPrices] = useState("");
 
+
 useEffect(() => {
   authUser(setUser);
 }, [user]);

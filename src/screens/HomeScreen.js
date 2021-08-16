@@ -12,11 +12,11 @@ const Home = ({ stock, setStock }) => {
   return (
     <div className="pageContainer">
       <h2>Available Fish</h2>
-
       <div className="main">
         <BoxCard stock={stock} />
       </div>
     </div>
+
   );
 };
 
