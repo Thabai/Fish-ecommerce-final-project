@@ -5,6 +5,7 @@ const ProductScreen = (props) => {
     return (
         <div className="singleproductscreen">
             Product Screen
+            <h1>HI</h1>
         </div>
     )
 };

@@ -20,7 +20,6 @@ const [user, setUser] = useState();
 const [admin, setAdmin] = useState();
 const [stock, setStock] = useState([]);
 const [basket, setBasket] = useState([]);
-const [prices, setPrices] = useState("");
 
 
 useEffect(() => {
@@ -45,8 +44,6 @@ useEffect(() => {
               setStock={setStock}
               basket={basket}
               setBasket={setBasket}
-              prices={prices}
-              setPrices={setPrices}
             />
           </Route>
           {/* Product screen */}
@@ -59,8 +56,6 @@ useEffect(() => {
               user={user}
               basket={basket}
               setBasket={setBasket}
-              prices={prices}
-              setPrices={setPrices}
             />
           </Route>
           {/* Login page */}
