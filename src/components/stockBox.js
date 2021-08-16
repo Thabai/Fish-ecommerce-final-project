@@ -16,3 +16,4 @@ const StockBox = ({data}) => {
   );
 };
 export default StockBox;
+

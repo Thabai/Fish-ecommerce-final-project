@@ -1,12 +1,12 @@
 import "./App.css";
 import React, {useState, useEffect} from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Screens
 import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
 import ProductsScreen from "./screens/ProductsScreen";
-import SingleProductScreen from "./screens/SingleProductScreen";
+import {SingleProductScreen} from "./screens/SingleProductScreen";
 import LoginScreen from "./screens/LoginScreen";
 import Profile from "./screens/Profile";
 import Admin from "./screens/Admin";
@@ -18,7 +18,9 @@ import Navbar from './components/Navbar';
 const App = () => {
 const [user, setUser] = useState();
 const [admin, setAdmin] = useState();
-const [stock, setStock] = useState();
+const [stock, setStock] = useState([]);
+const [basket, setBasket] = useState([]);
+const [prices, setPrices] = useState("");
 
 useEffect(() => {
   authUser(setUser);
@@ -37,15 +39,28 @@ useEffect(() => {
           </Route>
           {/* Products screen */}
           <Route exact path="/products">
-            <ProductsScreen user={user} setUser={setUser} />
+            <ProductsScreen
+              stock={stock}
+              setStock={setStock}
+              basket={basket}
+              setBasket={setBasket}
+              prices={prices}
+              setPrices={setPrices}
+            />
           </Route>
           {/* Product screen */}
           <Route exact path="/product/:id">
-            <SingleProductScreen user={user} setUser={setUser} />
+            <SingleProductScreen />
           </Route>
           {/* Cart screen */}
           <Route exact path="/cart">
-            <CartScreen user={user} setUser={setUser} />
+            <CartScreen
+              user={user}
+              basket={basket}
+              setBasket={setBasket}
+              prices={prices}
+              setPrices={setPrices}
+            />
           </Route>
           {/* Login page */}
           <Route exact path="/login">

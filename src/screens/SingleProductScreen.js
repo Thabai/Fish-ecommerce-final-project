@@ -1,11 +1,28 @@
-import './SingleProductScreen.css'
+import './SingleProductScreen.css';
+import { Route, Link } from "react-router-dom";
 
-const ProductScreen = () => {
+const ProductScreen = (props) => {
     return (
         <div className="singleproductscreen">
             Product Screen
         </div>
     )
-}
+};
 
-export default ProductScreen
+const SingleProductScreen = (props) => {
+  return (
+    <div>
+      {props.data.map((value, index) => {
+          return (
+            <Route
+              key={index}
+              path={`/${value.id}`}
+              children={<ProductScreen value={value} />}
+            />
+          );
+      })}
+    </div>
+  );
+};
+
+export { SingleProductScreen };

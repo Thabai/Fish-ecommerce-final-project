@@ -2,7 +2,7 @@ import './HomeScreen.css'
 import React, { useEffect } from "react";
 import { findAllFish } from '../utils';
 import BoxCard from '../components/BoxCard';
-import StockBox from '../components/stockBox';
+
 
 const Home = ({ stock, setStock }) => {
   useEffect(() => {
@@ -11,9 +11,11 @@ const Home = ({ stock, setStock }) => {
 
   return (
     <div className="pageContainer">
-        <h2>Available Fish</h2>
-        {/* <Card ={stock}/> */}
-        <BoxCard stock={stock}/>
+      <h2>Available Fish</h2>
+
+      <div className="main">
+        <BoxCard stock={stock} />
+      </div>
     </div>
   );
 };
