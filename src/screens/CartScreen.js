@@ -14,7 +14,7 @@ const CartScreen = ({user, basket, setBasket}) => {
 
   const itemsPrice = basket.reduce((acc, stock) => acc + stock.qty * stock.price, 0);
   const taxPrice = itemsPrice * 0.14;
-  const shippingPrice = itemsPrice > 200 ? 0 : 20;
+  const shippingPrice = itemsPrice > 50 ? 0 : 20;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
   return (
@@ -27,8 +27,11 @@ const CartScreen = ({user, basket, setBasket}) => {
             <div className="col-2">{stock.name}</div>
             <div className="col-2">
               <button onClick={() => handleRemove(stock)} className="remove">
-                -
+                Delete from Basket
               </button>
+              {/* <button onClick={() => handleUpdate(stock)} className="remove">
+                -
+              </button> */}
               {/* <button onClick={() => setBasket(stock)} className="add">
                 +
               </button> */}
