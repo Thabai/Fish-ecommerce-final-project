@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { fetchUsers } from "../utils";
 import { Redirect } from "react-router-dom";
 
-const LoginScreen = ({ user, setUser, admin, setAdmin }) => {
+const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
   const [newUser, setNewUser] = useState(false);
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
@@ -34,7 +34,8 @@ const LoginScreen = ({ user, setUser, admin, setAdmin }) => {
             city,
             postcode,
             setUser,
-            setAdmin
+            setAdmin,
+            setUserFetch
           )
         }
       >
@@ -104,8 +105,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin }) => {
         {newUser ? "Log In" : "Sign Up"}
       </button>
       {admin && <Redirect to="/admin" />} 
-      {user && <Redirect to="/cart" />}
-
+      {user && <Redirect to="/profile" />}
     </div>
   );
 };

@@ -14,7 +14,7 @@ export const authUser = async (setUser) => {
   }
 };
 
-export const fetchUsers = async (e, username, email, pass, name, surname, street, city, postcode, setUser, setUserAdmin) => {
+export const fetchUsers = async (e, username, email, pass, name, surname, street, city, postcode, setUser, setUserAdmin, setUserFetch) => {
   e.preventDefault();
   try {
     let response;
@@ -47,16 +47,19 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
     }
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
-    console.log(data);
     if (data.user.admin === true) {
       setUserAdmin(data.user.admin);
     } else {
-    setUser(data.user.username);
+    setUser(data.user);
+    setUserFetch(data);
+    console.log(data)
+    console.log(data)
     }
   } catch (error) {
     console.log(error);
   }
 };
+
 
 //stock
 export const findAllFish = async (setStock) => {
@@ -75,7 +78,7 @@ export const findAllFish = async (setStock) => {
 export const updateUserDetails = async (
   e,
   email,
-  pass,
+  password,
   name,
   surname,
   street,
@@ -93,7 +96,7 @@ export const updateUserDetails = async (
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: email,
-        password: pass,
+        password: password,
         name: name,
         surname: surname,
         street: street,
@@ -104,7 +107,7 @@ export const updateUserDetails = async (
     });
     const data = await response.json();
     console.log(data);
-    setUser(data.username);
+    setUser(data);
   } catch (error) {
     console.log(error);
   }
