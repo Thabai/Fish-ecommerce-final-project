@@ -24,8 +24,6 @@ const Profile = ({ user, setUser, userFetch}) => {
     }
   }, [userFetch]);
 
-  console.log(userFetch)
-  console.log(user)
   
   const logoutHandler = (e) => {
     e.preventDefault();
