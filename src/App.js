@@ -10,6 +10,7 @@ import {SingleProductScreen} from "./screens/SingleProductScreen";
 import LoginScreen from "./screens/LoginScreen";
 import Profile from "./screens/Profile";
 import Admin from "./screens/Admin";
+import PaypalScreen from "./screens/PaypalScreen";
 import { authUser } from "./utils";
 
 // Components
@@ -47,16 +48,10 @@ useEffect(() => {
             />
           </Route>
           {/* Product screen */}
-          <Route exact path="/product/:id">
-            <SingleProductScreen />
-          </Route>
+          <SingleProductScreen stock={stock} />
           {/* Cart screen */}
           <Route exact path="/cart">
-            <CartScreen
-              user={user}
-              basket={basket}
-              setBasket={setBasket}
-            />
+            <CartScreen user={user} basket={basket} setBasket={setBasket} />
           </Route>
           {/* Login page */}
           <Route exact path="/login">
@@ -78,6 +73,9 @@ useEffect(() => {
               stock={stock}
               setStock={setStock}
             />
+          </Route>
+          <Route exact path="/paypal">
+            <PaypalScreen />
           </Route>
         </Switch>
       </main>

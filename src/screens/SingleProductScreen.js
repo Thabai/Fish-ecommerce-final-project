@@ -1,11 +1,11 @@
 import './SingleProductScreen.css';
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const ProductScreen = (props) => {
     return (
         <div className="singleproductscreen">
-            Product Screen
-            <h1>HI</h1>
+            <h1>{props.value.name}</h1>
+            <h3>{props.value.price}</h3>
         </div>
     )
 };
@@ -13,11 +13,11 @@ const ProductScreen = (props) => {
 const SingleProductScreen = (props) => {
   return (
     <div>
-      {props.data.map((value, index) => {
+      {props.stock.map((value, index) => {
           return (
             <Route
               key={index}
-              path={`/${value.id}`}
+              path={`/${value.name}`}
               children={<ProductScreen value={value} />}
             />
           );

@@ -1,10 +1,14 @@
 import './CartScreen.css';
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import React from 'react';
 
 
 
 const CartScreen = ({user, admin, basket, setBasket}) => {
+const history = useHistory();
+const navigateTo = () => history.push("/paypal");
+
 
     const handleRemove = (stock) => {
      setBasket(basket.filter((item) => item.name !== stock.name));
@@ -96,9 +100,7 @@ const CartScreen = ({user, admin, basket, setBasket}) => {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert("Implement Checkout!")}>
-                Checkout
-              </button>
+              <button onClick={navigateTo} type="button">Checkout</button>
             </div>
           </>
         )}
