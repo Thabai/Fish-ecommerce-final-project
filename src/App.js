@@ -29,13 +29,13 @@ useEffect(() => {
 
   return (
     <Router>
-      <Navbar user={user} admin={admin} />
+      <Navbar user={user} admin={admin} basket={basket} />
       {/* SideDrawer */}
       {/* Backdrop */}
       <main>
         <Switch>
           {/* Home screen */}
-          <Route exact path="/">
+          <Route exact path="/home">
             <HomeScreen stock={stock} setStock={setStock} />
           </Route>
           {/* Products screen */}
@@ -47,8 +47,6 @@ useEffect(() => {
               setBasket={setBasket}
             />
           </Route>
-          {/* Product screen */}
-          <SingleProductScreen stock={stock} />
           {/* Cart screen */}
           <Route exact path="/cart">
             <CartScreen user={user} basket={basket} setBasket={setBasket} />
@@ -77,6 +75,8 @@ useEffect(() => {
           <Route exact path="/paypal">
             <PaypalScreen />
           </Route>
+          {/* Product screen */}
+          <SingleProductScreen stock={stock} />
         </Switch>
       </main>
     </Router>
