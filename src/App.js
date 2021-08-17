@@ -21,6 +21,7 @@ const [user, setUser] = useState();
 const [admin, setAdmin] = useState();
 const [stock, setStock] = useState([]);
 const [basket, setBasket] = useState([]);
+const [userFetch, setUserFetch] = useState([]);
 
 
 useEffect(() => {
@@ -49,7 +50,12 @@ useEffect(() => {
           </Route>
           {/* Cart screen */}
           <Route exact path="/cart">
-            <CartScreen user={user} admin={admin} basket={basket} setBasket={setBasket} />
+            <CartScreen
+              user={user}
+              admin={admin}
+              basket={basket}
+              setBasket={setBasket}
+            />
           </Route>
           {/* Login page */}
           <Route exact path="/login">
@@ -58,10 +64,16 @@ useEffect(() => {
               setUser={setUser}
               admin={admin}
               setAdmin={setAdmin}
+              setUserFetch={setUserFetch}
             />
           </Route>
           <Route exact path="/profile">
-            <Profile user={user} setUser={setUser} />
+            <Profile
+              user={user}
+              setUser={setUser}
+              userFetch={userFetch}
+              setUserFetch={setUserFetch}
+            />
           </Route>
           <Route exact path="/admin">
             <Admin
