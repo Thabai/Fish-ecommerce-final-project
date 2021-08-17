@@ -25,11 +25,14 @@ const onAdd = (stock) => {
   
     return (
       <div className="pageContainer">
+        <div className='overlay'>
+        <div className="title">
         <h2>Available Fish</h2>
+        </div>
         <div className="main">
           <BoxCard stock={stock} onAdd={onAdd} />
         </div>
-      </div>
+      </div></div>
     );
 }
 

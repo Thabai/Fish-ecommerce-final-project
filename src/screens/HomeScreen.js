@@ -11,9 +11,14 @@ const HomeScreen = ({ stock, setStock }) => {
 
   return (
     <div className="pageContainer">
-      <h2>Available Fish</h2>
+      <div className='overlay'>
+      <div className='title'>
+      <h2>Home</h2>
+      </div>
+    
+      <div className="main">
         <BoxCardHome stock={stock} />
-    </div>
+    </div></div></div>
 
   );
 };
