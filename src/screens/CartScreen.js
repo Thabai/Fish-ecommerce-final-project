@@ -4,12 +4,37 @@ import React from 'react';
 
 
 
-const CartScreen = ({user, basket, setBasket}) => {
+const CartScreen = ({user, admin, basket, setBasket}) => {
 
-    const handleRemove = (itemIndex) => {
-    let newArray = itemIndex - 1;
-    newArray.splice(itemIndex, 1);
-    setBasket(newArray);
+    const handleRemove = (stock) => {
+     setBasket(basket.filter((item) => item.name !== stock.name));
+  };
+
+
+  const onAdd = (stock) => {
+    const exist = basket.find((item) => item.name === stock.name);
+    if (exist) {
+      setBasket(
+        basket.map((item) =>
+          item.name === stock.name ? { ...exist, qty: exist.qty + 1 } : item
+        )
+      );
+    } else {
+      setBasket([...basket, { ...stock, qty: 1 }]);
+    }
+  };
+  
+  const onMinus= (stock) => {
+    const exist = basket.find((item) => item.name === stock.name);
+    if (exist.qty > 1) {
+      setBasket(
+        basket.map((item) =>
+          item.name === stock.name ? { ...exist, qty: exist.qty - 1 } : item
+        )
+      )
+    } else {
+      handleRemove(stock);
+    }
   };
 
   const itemsPrice = basket.reduce((acc, stock) => acc + stock.qty * stock.price, 0);
@@ -29,12 +54,12 @@ const CartScreen = ({user, basket, setBasket}) => {
               <button onClick={() => handleRemove(stock)} className="remove">
                 Delete from Basket
               </button>
-              {/* <button onClick={() => handleUpdate(stock)} className="remove">
+              <button onClick={() => onMinus(stock)} className="remove">
                 -
-              </button> */}
-              {/* <button onClick={() => setBasket(stock)} className="add">
+              </button>
+              <button onClick={() => onAdd(stock)} className="add">
                 +
-              </button> */}
+              </button>
             </div>
 
             <div className="col-2 text-right">
@@ -77,8 +102,8 @@ const CartScreen = ({user, basket, setBasket}) => {
             </div>
           </>
         )}
-        {user ? <Redirect to="/cart" /> : <Redirect to="/products" />}
       </div>
+      {!user | !admin ? <Redirect to="/cart" /> : <Redirect to="/login" />}
     </aside>
   );
 }
