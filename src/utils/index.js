@@ -179,6 +179,67 @@ export const createFish = async (
     console.log(error);
 }};
 
+export const findFish = async (e, name, setUpdateStock) => {
+    e.preventDefault();
+  try {
+      const response = await fetch(`${process.env.REACT_APP_REST_API}fish/${name}`, {
+        method: "GET",
+      });
+      const data = await response.json();
+      setUpdateStock(data);
+    } catch (error) {
+      console.log(error);
+    }
+};
+
+export const updateFish = async (
+  e,
+  name,
+  scientific,
+  img,
+  hab,
+  desc,
+  temperature,
+  temperament,
+  food,
+  social,
+  breeding,
+  quant,
+  price,
+  setStock
+) => {
+  e.preventDefault();
+  try {
+    let response;
+    let compat = {
+      temperature: temperature,
+      temperament: temperament,
+      food: food,
+      social: social,
+      breeding: breeding,
+    };
+    response = await fetch(`${process.env.REACT_APP_REST_API}fish`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        scientific: scientific,
+        img: img,
+        habitat: hab,
+        description: desc,
+        compatibility: compat,
+        quantity: quant,
+        price: price,
+      }),
+    });
+    const data = await response.json();
+    setStock(data.fish);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 
 export const deleteStock = async (e, del, setStock) => {
   e.preventDefault();
