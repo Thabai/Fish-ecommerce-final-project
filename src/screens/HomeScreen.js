@@ -11,8 +11,12 @@ const Home = ({ stock, setStock }) => {
 
   return (
     <div className="pageContainer">
-      <h2>Available Fish</h2>
+      <div className="title">
+      <h2>Home</h2>
+      </div>
+      <div className="card-holder">
         <BoxCardHome stock={stock} />
+        </div>
     </div>
 
   );

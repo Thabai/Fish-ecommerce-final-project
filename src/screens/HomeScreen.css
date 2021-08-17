@@ -7,22 +7,36 @@ body {
   background-position: absolute;
   background-image: url("/src/images/bg.jpeg");
   width: 100vw !important;
+  display: flex;
 }
 .pageContainer {
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    justify-content: space-around;
+    background-color: rgba(137, 43, 226, 0.571);
+}
+.main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100vw;
-    max-height: auto;
-    justify-content: space-around;
 }
-.main {
-    display: flex;
+h2 {
+    font-size: 3rem;
+    color: white;
+}
+.title{
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.card-holder {
+ 
     flex-direction: row !important;
     flex-wrap: wrap;
     width: 100vw;
-}
-h2 {
-    font-size: xx-large;
-    color: white;
 }

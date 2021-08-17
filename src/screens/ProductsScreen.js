@@ -26,7 +26,8 @@ const onAdd = (stock) => {
   
     return (
       <div className="pageContainer">
-        <h2>Available Fish</h2>
+        <div className="title">
+        <h2>Available Fish</h2></div>
         <div className="main">
           <BoxCard stock={stock} onAdd={onAdd} />
         </div>
