@@ -4,7 +4,7 @@ import './BoxCardHome.css';
 
 const BoxCardHome = ({stock}) => {
         return (
-            <div>
+            <div className='cards'>
                 {stock.map((data, index) => {
                     return <StockBoxHome key={index} data={data} />; 
                 })}

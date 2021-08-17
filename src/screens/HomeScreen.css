@@ -18,13 +18,8 @@ body {
     
 }
 .main {
-    display: flex;
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    width: 100vw;
-    
-    
 
+    width: 100vw;
 }
 h2 {
     font-size: 3rem;
@@ -37,4 +32,5 @@ h2 {
 .overlay {
     background-color: rgba(137, 43, 226, 0.787);
     min-height: 100vh;
+
 }
