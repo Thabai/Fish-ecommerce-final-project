@@ -145,7 +145,7 @@ const Admin = ({setUser, admin, setAdmin, stock, setStock }) => {
           onChange={(e) => setDel(e.target.value)}
           placeholder="Fish Name"
         />
-        <button type="submit">Delete Account</button>
+        <button type="submit">Delete Fish</button>
       </form>
 
       <h2 className="navText">Log Out</h2>

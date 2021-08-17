@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({user, admin}) => {
+const Navbar = ({user, admin, basket}) => {
   return (
     <nav className="navbar">
       {/* logo */}
@@ -43,7 +43,7 @@ const Navbar = ({user, admin}) => {
             <span>
               <i className="fas fa-shopping-cart" id="cart__icon"></i>
               Cart
-              <span className="cart__pill">0</span>
+              <span className="cart__pill">{basket.qty}</span>
             </span>
           </Link>
         </li>

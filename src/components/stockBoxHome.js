@@ -15,7 +15,7 @@ const StockBoxHome = ({data, onAdd}) => {
         <p className="price">Price: £{data.price.toFixed(2)}</p>
 
         <div className="more-info">
-        <Link to={`/${data.id}`}>More Info</Link>
+        <Link to={`/${data.name}`}>More Info</Link>
         </div>
       </li>
     </div>
