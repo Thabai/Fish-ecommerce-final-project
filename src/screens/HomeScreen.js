@@ -4,7 +4,7 @@ import { findAllFish } from '../utils';
 import BoxCardHome from '../components/BoxCardHome';
 
 
-const Home = ({ stock, setStock }) => {
+const HomeScreen = ({ stock, setStock }) => {
   useEffect(() => {
     findAllFish(setStock);
   }, []);
@@ -18,4 +18,4 @@ const Home = ({ stock, setStock }) => {
   );
 };
 
-export default Home;
+export default HomeScreen;

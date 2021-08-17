@@ -153,7 +153,7 @@ const Admin = ({setUser, admin, setAdmin, stock, setStock }) => {
         Log Out
       </button>
 
-      {!admin && <Redirect to="/home" />}
+      {!admin && <Redirect to="/" />}
     </div>
   );
 };

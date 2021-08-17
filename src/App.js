@@ -35,7 +35,7 @@ useEffect(() => {
       <main>
         <Switch>
           {/* Home screen */}
-          <Route exact path="/home">
+          <Route exact path="/">
             <HomeScreen stock={stock} setStock={setStock} />
           </Route>
           {/* Products screen */}
@@ -49,7 +49,7 @@ useEffect(() => {
           </Route>
           {/* Cart screen */}
           <Route exact path="/cart">
-            <CartScreen user={user} basket={basket} setBasket={setBasket} />
+            <CartScreen user={user} admin={admin} basket={basket} setBasket={setBasket} />
           </Route>
           {/* Login page */}
           <Route exact path="/login">
