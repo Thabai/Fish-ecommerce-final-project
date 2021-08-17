@@ -1,8 +1,8 @@
 import React from 'react';
 import './stockBox.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-const StockBoxHome = ({data, onAdd}) => {
+const StockBoxHome = ({data}) => {
 
   return (
     <div className="stock">

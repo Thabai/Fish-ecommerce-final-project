@@ -50,6 +50,7 @@ const navigateTo = () => history.push("/paypal");
     <aside className="cart">
       <h2>Cart Items</h2>
       <div>
+        {!user && <Redirect to="/login" />}
         {basket.length === 0 && <div>Cart is empty</div>}
         {basket.map((stock) => (
           <div key={stock.id} className="row">
@@ -100,12 +101,13 @@ const navigateTo = () => history.push("/paypal");
             </div>
             <hr />
             <div className="row">
-              <button onClick={navigateTo} type="button">Checkout</button>
+              <button onClick={navigateTo} type="button">
+                Checkout
+              </button>
             </div>
           </>
         )}
       </div>
-      {!user | !admin ? <Redirect to="/cart" /> : <Redirect to="/login" />}
     </aside>
   );
 }

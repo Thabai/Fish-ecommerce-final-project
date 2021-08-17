@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { fetchUsers } from "../utils";
 import { Redirect } from "react-router-dom";
 
-export const LoginScreen = ({ user, setUser, admin, setAdmin }) => {
+const LoginScreen = ({ user, setUser, admin, setAdmin }) => {
   const [newUser, setNewUser] = useState(false);
   const [name, setName] = useState();
   const [surname, setSurname] = useState();

@@ -147,7 +147,7 @@ return (
     >
       Delete Account
     </button>
-    {!user && <Redirect to="/home" />}
+    {!user && <Redirect to="/" />}
   </div>
 );
     };
