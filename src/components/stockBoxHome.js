@@ -2,7 +2,7 @@ import React from 'react';
 import './stockBox.css';
 import { Link } from 'react-router-dom'
 
-const StockBox = ({data, onAdd}) => {
+const StockBoxHome = ({data, onAdd}) => {
 
   return (
     <div className="stock">
@@ -13,7 +13,7 @@ const StockBox = ({data, onAdd}) => {
         <p>About: {data.description}</p>
         <p>Water Type: {data.habitat}</p>
         <p className="price">Price: £{data.price.toFixed(2)}</p>
-        <button onClick={() => onAdd(data)}> Add to cart </button>
+
         <div className="more-info">
         <Link to={`/${data.id}`}>More Info</Link>
         </div>
@@ -21,5 +21,5 @@ const StockBox = ({data, onAdd}) => {
     </div>
   );
 };
-export default StockBox;
+export default StockBoxHome;
 

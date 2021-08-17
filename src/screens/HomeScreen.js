@@ -1,7 +1,7 @@
 import './HomeScreen.css'
 import React, { useEffect } from "react";
 import { findAllFish } from '../utils';
-import BoxCard from '../components/BoxCard';
+import BoxCardHome from '../components/BoxCardHome';
 
 
 const Home = ({ stock, setStock }) => {
@@ -12,7 +12,7 @@ const Home = ({ stock, setStock }) => {
   return (
     <div className="pageContainer">
       <h2>Available Fish</h2>
-        <BoxCard stock={stock} />
+        <BoxCardHome stock={stock} />
     </div>
 
   );
