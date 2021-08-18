@@ -13,18 +13,21 @@ const Profile = ({ user, setUser, userFetch}) => {
   const [password, setPass] = useState();
 
   useEffect(() => {
-    if (userFetch) {
-      setName(userFetch.user.name)
+    try {
+      setName(userFetch.user.name);
       setSurname(userFetch.user.surname);
       setStreet(userFetch.user.street);
       setCity(userFetch.user.city);
       setPostcode(userFetch.user.postcode);
       setEmail(userFetch.user.email);
       setPass(userFetch.user.password);
+    } catch (error) {
+      console.log(error);
     }
   }, [userFetch]);
 
-  
+  console.log(userFetch)
+
   const logoutHandler = (e) => {
     e.preventDefault();
     localStorage.removeItem("MyToken");
@@ -70,6 +73,7 @@ return (
     <button className="logBtn" type="submit" onClick={logoutHandler}>
       Log Out
     </button>
+
     <h2 className="navText">Delete Account</h2>
     <button
       className="logBtn"
