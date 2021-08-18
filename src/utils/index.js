@@ -200,7 +200,6 @@ export const createFish = async (
       document.getElementById("message").innerHTML =  "Item Created Successfully";
   } catch (error) {
     document.getElementById("message").innerHTML = "Check required fields have data";
-
   }
 };
 

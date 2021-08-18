@@ -1,3 +1,5 @@
-.pageContainer{
-    background: white;
+
+#messageContainer {
+    background: var(--white);
 }
+

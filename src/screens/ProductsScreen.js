@@ -1,4 +1,4 @@
-import './ProductsScreen.css';
+import "./ProductsScreen.css";
 import { useEffect } from "react";
 import { findAllFish } from '../utils';
 import BoxCard from '../components/BoxCard';
@@ -24,24 +24,21 @@ const onAdd = (stock) => {
   }, 2000);
 };
 
-
   useEffect(() => {
     findAllFish(setStock);
   }, [setStock]);
-  
-    return (
-      <div className="pageContainerProd">
-        <div className="overlayProd">
-          <div className="title">
-            <h2>Available Fish</h2>
-          </div>
-          <div id="message"></div>
-          <div className="main">
-            <BoxCard stock={stock} onAdd={onAdd} />
-          </div>
-        </div>
+
+  return (
+    <div className="productsScreen">
+      <div className="productsScreen__title">
+        <h2>Available Fish</h2>
       </div>
-    );
-}
+      <div id="message"></div>
+      <div className="productsScreen__products">
+        <BoxCard stock={stock} onAdd={onAdd} />
+      </div>
+    </div>
+  );
+};
 
 export default ProductsScreen;

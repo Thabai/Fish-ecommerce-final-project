@@ -15,15 +15,13 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
   const [pass, setPass] = useState();
 
   return (
-    <div className="pageContainerLogin">
-      <div className="overlayLogin">
-        <div className="formContainerLogin">
-          <div className="header">
-            <h2>Welcome</h2>
-            <h4 className="subText">Please Log in or Sign up</h4>
-          </div>
-          <form
-            className="logForm"
+     <div className="login">
+      <div>
+        <p className="login__title">Welcome</p>
+        <p className="login__note">Please Log in or Sign up</p>
+      </div>
+      <form
+        className="login__form"
             onSubmit={(e) =>
               fetchUsers(
                 e,
@@ -91,26 +89,30 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
               type="password"
             />
             <div id="message"></div>
-            <div className="buttons">
-              <button className="logBtn" type="submit">
-                {newUser ? "Sign Up" : "Log In"}
-              </button>
-            </div>
-          </form>
+             <button className="logBtn" type="submit">
+          {newUser ? "Sign Up" : "Log In"}
+        </button>
+      </form>
 
-          <button
-            className="logBtn"
-            type="button"
-            onClick={() => setNewUser(!newUser)}
-          >
-            {newUser ? "Log In" : "Sign Up"}
-          </button>
-          {admin && <Redirect to="/admin" />}
-          {user && <Redirect to="/profile" />}
+      <p className="profile__note">Register now for your free account.</p>
+
+      <button
+        className="logBtn"
+        type="button"
+        onClick={() => setNewUser(!newUser)}
+      >
+        {newUser ? "Log In" : "Sign Up"}
+      </button>
+      {admin && <Redirect to="/admin" />} 
+      {user && <Redirect to="/profile" />}
         </div>
       </div>
+
     </div>
   );
 };
+           
+           
+      
 
 export default LoginScreen;

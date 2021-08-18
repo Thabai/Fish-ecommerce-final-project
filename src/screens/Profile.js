@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
-import { updateUserDetails, deleteUser} from "../utils";
+import React, { useState, useEffect } from "react";
+import { updateUserDetails, deleteUser } from "../utils";
 import { Redirect } from "react-router";
+import "./Profile.css";
 
-const Profile = ({ user, setUser, userFetch}) => {
-
+const Profile = ({ user, setUser, userFetch }) => {
   const [name, setName] = useState();
   const [surname, setSurname] = useState();
   const [street, setStreet] = useState();
@@ -32,73 +32,71 @@ const Profile = ({ user, setUser, userFetch}) => {
     setUser();
   };
 
-return (
-  <div className="pageContainer">
-    <h1 className="header">User settings</h1>
-    <p className="navText">Update profile settings below</p>
-    <div id="message"></div>
+  return (
+    <div className="profile">
+      <p className="profile__title">User Settings</p>
+      <p className="profile__note">Update profile settings below</p>
+      <div id="message"></div>
 
-    {userFetch ? (
-      <form
-        onSubmit={(e) =>
-          updateUserDetails(
-            e,
-            email,
-            password,
-            name,
-            surname,
-            street,
-            city,
-            postcode,
-            user,
-            setUser
-          )
-        }
-      >
-        <h3>Change First Name</h3>
-        <p>{name}</p>
-        <input onChange={(e) => setName(e.target.value)} />
-        <h3>Change Surname</h3>
-        <p>{surname}</p>
-        <input onChange={(e) => setSurname(e.target.value)} />
-        <h3>Change Street</h3>
-        <p>{street}</p>
-        <input onChange={(e) => setStreet(e.target.value)} />
-        <h3>Change City</h3>
-        <p>{city}</p>
-        <input onChange={(e) => setCity(e.target.value)} />
-        <h3>Change Postcode</h3>
-        <p>{postcode}</p>
-        <input onChange={(e) => setPostcode(e.target.value)} />
-        <h3>Change Email</h3>
-        <p>{email}</p>
-        <input onChange={(e) => setEmail(e.target.value)} />
-        <h3>Change Password</h3>
-        <p>{password}</p>
-        <input type="password" onChange={(e) => setPass(e.target.value)} />
-        <button className="logBtn" type="submit">
-          Update
+      {userFetch ? (
+        <form
+          className="profile__form"
+          onSubmit={(e) =>
+            updateUserDetails(
+              e,
+              email,
+              password,
+              name,
+              surname,
+              street,
+              city,
+              postcode,
+              user,
+              setUser
+            )
+          }
+        >
+          <p className="profile__note">Change First Name</p>
+          <p>{name}</p>
+          <input onChange={(e) => setName(e.target.value)} />
+          <p className="profile__note">Change Surname</p>
+          <p>{surname}</p>
+          <input onChange={(e) => setSurname(e.target.value)} />
+          <p className="profile__note">Change Address</p>
+          <p>{street}</p>
+          <input onChange={(e) => setStreet(e.target.value)} />
+          <p className="profile__note">Change City</p>
+          <p>{city}</p>
+          <input onChange={(e) => setCity(e.target.value)} />
+          <p className="profile__note">Change Postcode</p>
+          <p>{postcode}</p>
+          <input onChange={(e) => setPostcode(e.target.value)} />
+          <p className="profile__note">Change Email</p>
+          <p>{email}</p>
+          <input onChange={(e) => setEmail(e.target.value)} />
+          <p className="profile__note">Change Password</p>
+          <p>{password}</p>
+          <input type="password" onChange={(e) => setPass(e.target.value)} />
+          <button type="submit">Update</button>
+        </form>
+      ) : null}
+      <p className="profile__note">Log out or delete your account below</p>
+      <div className="user__controls">
+        <button className="logBtn" type="submit" onClick={logoutHandler}>
+          Log Out
+
+        <button
+          className="logBtn"
+          type="submit"
+          onClick={() => {
+            deleteUser(user, setUser);
+          }}
+        >
+          Delete Account
         </button>
-      </form>
-    ) : null}
-    <h2 className="navText">Log Out</h2>
-    <button className="logBtn" type="submit" onClick={logoutHandler}>
-      Log Out
-    </button>
-
-    <h2 className="navText">Delete Account</h2>
-    <button
-      className="logBtn"
-      type="submit"
-      onClick={() => {
-        deleteUser(user, setUser);
-      }}
-    >
-      Delete Account
-    </button>
-    {!user && <Redirect to="/" />}
-  </div>
-);
-    };
+        {!user && <Redirect to="/" />}
+      </div>
+    </div>
+  );
+};
 export default Profile;
-
