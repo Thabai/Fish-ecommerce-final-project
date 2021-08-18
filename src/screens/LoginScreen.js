@@ -16,9 +16,11 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
 
   return (
     <div className="pageContainer">
+      <div className='overlay'>
+        <div className='formContainer'>
       <div className="header">
         <h2>Welcome</h2>
-        <h4>Please Log in or Sign up</h4>
+        <h4 className='subText'>Please Log in or Sign up</h4>
       </div>
       <form
         className="logForm"
@@ -91,12 +93,13 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
           className="logInput"
           onChange={(e) => setPass(e.target.value)}
           placeholder="Password"
-        />
-
+          type="password"
+        /></form>
+<div className='buttons'>
         <button className="logBtn" type="submit">
           {newUser ? "Sign Up" : "Log In"}
         </button>
-      </form>
+      
       <button
         className="logBtn"
         type="button"
@@ -106,7 +109,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
       </button>
       {admin && <Redirect to="/admin" />} 
       {user && <Redirect to="/profile" />}
-    </div>
+      </div></div></div></div>
   );
 };
 
