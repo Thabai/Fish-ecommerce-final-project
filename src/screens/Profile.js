@@ -26,8 +26,6 @@ const Profile = ({ user, setUser, userFetch }) => {
     }
   }, [userFetch]);
 
-  console.log(userFetch);
-
   const logoutHandler = (e) => {
     e.preventDefault();
     localStorage.removeItem("MyToken");
@@ -38,7 +36,7 @@ const Profile = ({ user, setUser, userFetch }) => {
     <div className="profile">
       <p className="profile__title">User Settings</p>
       <p className="profile__note">Update profile settings below</p>
-      <div id="messageContainer"></div>
+      <div id="message"></div>
 
       {userFetch ? (
         <form
@@ -86,7 +84,6 @@ const Profile = ({ user, setUser, userFetch }) => {
       <div className="user__controls">
         <button className="logBtn" type="submit" onClick={logoutHandler}>
           Log Out
-        </button>
 
         <button
           className="logBtn"

@@ -15,78 +15,81 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
   const [pass, setPass] = useState();
 
   return (
-    <div className="login">
+     <div className="login">
       <div>
         <p className="login__title">Welcome</p>
         <p className="login__note">Please Log in or Sign up</p>
       </div>
       <form
         className="login__form"
-        onSubmit={(e) =>
-          fetchUsers(
-            e,
-            username,
-            email,
-            pass,
-            name,
-            surname,
-            street,
-            city,
-            postcode,
-            setUser,
-            setAdmin,
-            setUserFetch
-          )
-        }
-      >
-        {newUser &&
-          (
-            [<input
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Name"
-            />,
-          
-          
-            <input
-              onChange={(e) => setSurname(e.target.value)}
-              placeholder="Surname"
-            />,
-          
-          
-            <input
-              onChange={(e) => setStreet(e.target.value)}
-              placeholder="Street Name"
-            />,
-          
-          
-            <input
-              onChange={(e) => setCity(e.target.value)}
-              placeholder="City"
-            />,
-        
-          
-            <input
-              onChange={(e) => setPostcode(e.target.value)}
-              placeholder="Postcode"
-            />,
-          
-          
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />]
-          )}
-        <input
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-        />
-        <input
-          onChange={(e) => setPass(e.target.value)}
-          placeholder="Password"
-          type="password"
-        />
+            onSubmit={(e) =>
+              fetchUsers(
+                e,
+                username,
+                email,
+                pass,
+                name,
+                surname,
+                street,
+                city,
+                postcode,
+                setUser,
+                setAdmin,
+                setUserFetch
+              )
+            }
+          >
+            {newUser && [
+              <h2>All Fields Required</h2>,
+              <input
+                className="fnameInput"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Name"
+              />,
 
-        <button className="logBtn" type="submit">
+              <input
+                className="snameInput"
+                onChange={(e) => setSurname(e.target.value)}
+                placeholder="Surname"
+              />,
+
+              <input
+                className="streetInput"
+                onChange={(e) => setStreet(e.target.value)}
+                placeholder="Street Name"
+              />,
+
+              <input
+                className="cityInput"
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="City"
+              />,
+
+              <input
+                className="postcodeInput"
+                onChange={(e) => setPostcode(e.target.value)}
+                placeholder="Postcode"
+              />,
+
+              <input
+                className="logInput"
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+              />,
+            ]}
+            <input
+              className="logInput"
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Username"
+            />
+            <input
+              className="logInput"
+              onChange={(e) => setPass(e.target.value)}
+              placeholder="Password"
+              type="password"
+            />
+            <div id="message"></div>
+             <button className="logBtn" type="submit">
           {newUser ? "Sign Up" : "Log In"}
         </button>
       </form>
@@ -102,8 +105,14 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
       </button>
       {admin && <Redirect to="/admin" />} 
       {user && <Redirect to="/profile" />}
+        </div>
+      </div>
+
     </div>
   );
 };
+           
+           
+      
 
 export default LoginScreen;

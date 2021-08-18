@@ -62,7 +62,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
   return (
     <div className="pageContainer">
       <h3>Admin</h3>
-      <div id="messageContainer"></div>
+      <div id="message"></div>
       <form
         onSubmit={(e) =>
           createFish(
