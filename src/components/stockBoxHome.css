@@ -2,7 +2,7 @@ button {
   display: none;
    }
    .stock{
-     max-width: 20vw;
+     min-width: 30vw;
      /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
      padding: 1vh 2vw 1vh 1vw;
@@ -31,4 +31,7 @@ button {
    .price{
      color: white;
    }
-   
+   .saltFresh{
+    color: rgba(255, 255, 255, 0.938);
+    text-transform: capitalize !important;
+  }

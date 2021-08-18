@@ -11,7 +11,7 @@ const StockBoxHome = ({data}) => {
         <p className="cardName">{data.name}</p>
         <p>{data.scientific}</p>
         <p>About: {data.description}</p>
-        <p>Water Type: {data.habitat}</p>
+        <p className='saltFresh'>Water Type: {data.habitat}</p>
         <p className="price">Price: £{data.price.toFixed(2)}</p>
 
         <div className="more-info">

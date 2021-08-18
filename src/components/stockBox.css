@@ -4,7 +4,8 @@ button {
  border-radius: 5vh 5vh 5vh 5vh;
 }
 .stock{
-  max-width: 20vw;
+  width: 20vw;
+  
   /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   padding: 1vh 2vw 1vh 1vw;
@@ -30,4 +31,14 @@ img {
 }
 .price{
   color: white;
+}
+.saltFresh{
+  color: white;
+  text-transform: capitalize !important;
+}
+@media only screen and (max-width: 600px) {
+  .stock {
+   min-width: 90vw;
+  
+  }
 }
