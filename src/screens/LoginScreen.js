@@ -105,8 +105,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
       </button>
       {admin && <Redirect to="/admin" />} 
       {user && <Redirect to="/profile" />}
-        </div>
-      </div>
+          
 
     </div>
   );
