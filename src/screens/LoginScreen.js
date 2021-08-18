@@ -42,6 +42,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
             }
           >
             {newUser && [
+              <h2>All Fields Required</h2>,
               <input
                 className="fnameInput"
                 onChange={(e) => setName(e.target.value)}
@@ -89,13 +90,13 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
               placeholder="Password"
               type="password"
             />
+            <div id="message"></div>
             <div className="buttons">
               <button className="logBtn" type="submit">
                 {newUser ? "Sign Up" : "Log In"}
               </button>
             </div>
           </form>
-
 
           <button
             className="logBtn"
