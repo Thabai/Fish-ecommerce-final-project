@@ -1,0 +1,57 @@
+
+.overlay {
+    background-color: rgba(137, 43, 226, 0.787);
+    min-height: 100vh;
+    min-width: 100vw;
+    justify-content: center;
+    padding-left: 25vw;
+    padding-top: 10vh;
+    margin: 0;
+ 
+
+   
+}
+.logForm {
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 10vw 5vh 10vw;
+  
+}
+.pageContainer{
+   display: flex;
+   
+  
+}
+.logBtn{
+    min-height: 4vh;
+    min-width: 25vh;
+    margin-bottom: 1vh;
+}
+.logInput , .snameInput, .streetInput ,.cityInput, .postcodeInput, .fnameInput{
+    min-height: 4vh;
+    min-width: 10vh;
+    border-radius: 2vh 2vh 2vh 2vh;
+    padding: 0vh 2vw 0vh 2vw;
+    text-align: center;
+    margin: 2vh 2vh 2vh 2vh;
+}
+.formContainer {
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 128, 128, 0.685);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10vw;
+    max-width: 50vw;
+    justify-content: space-around;
+}
+.buttons{
+    min-width: 10vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.subText {
+    margin-left: 2vw;
+    color: white;
+}
