@@ -183,8 +183,10 @@ export const createFish = async (
         price: price,
       }),
     });
-    const data = await response.json();
-    setStock(data.fish);
+      const data = await response.json();
+      setStock(data);
+      console.log(data.fish)
+      console.log(data)
   } catch (error) {
     console.log(error);
   }
@@ -248,8 +250,8 @@ export const updateFish = async (
       }),
     });
     const data = await response.json();
-    setStock(data.fish);
-    console.log(data);
+    setStock(data);
+    console.log(data)
   } catch (error) {
     console.log(error);
   }

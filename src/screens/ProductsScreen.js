@@ -24,8 +24,8 @@ const onAdd = (stock) => {
   }, [setStock]);
   
     return (
-      <div className="pageContainer">
-        <div className='overlay'>
+      <div className="pageContainerProd">
+        <div className='overlayProd'>
         <div className="title">
         <h2>Available Fish</h2>
         </div>
