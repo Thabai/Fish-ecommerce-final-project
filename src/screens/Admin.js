@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { createFish, deleteStock, updateFish, findFish } from "../utils";
 import { Redirect } from "react-router";
 
-const Admin = ({setUser, admin, setAdmin, updateStock, setUpdateStock, setStock }) => {
+const Admin = ({setUser, admin, setAdmin, setStock }) => {
+  const [updateStock, setUpdateStock] = useState([]);
  const [name, setName] = useState();
  const [scientific, setScientific] = useState();
  const [img, setImg] = useState();
@@ -17,17 +18,24 @@ const Admin = ({setUser, admin, setAdmin, updateStock, setUpdateStock, setStock 
   const [price, setPrice] = useState();
   const [del, setDel] = useState();
 
-//  if (updateStock) {
-//       setName(updateStock.name)
-// //       // setSurname(userFetch.user.surname);
-// //       // setStreet(userFetch.user.street);
-// //       // setCity(userFetch.user.city);
-// //       // setPostcode(userFetch.user.postcode);
-// //       // setEmail(userFetch.user.email);
-// //       // setPass(userFetch.user.password);
-//     };
-console.log(updateStock)
-console.log(setUpdateStock)
+  useEffect(() => {
+    try {
+      setName(updateStock.fish.name);
+      setScientific(updateStock.fish.scientific);
+      setImg(updateStock.fish.img);
+      setHab(updateStock.fish.habitat);
+      setDesc(updateStock.fish.description);
+      setTemperature(updateStock.fish.compatibility.temperature);
+      setTemperament(updateStock.fish.compatibility.temperament);
+      setFood(updateStock.fish.compatibility.food);
+      setSocial(updateStock.fish.compatibility.social);
+      setBreeding(updateStock.fish.compatibility.breeding);
+      setQuant(updateStock.fish.quantity);
+      setPrice(updateStock.fish.price);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [updateStock]);
 
   const logoutHandler = (e) => {
     e.preventDefault();
@@ -145,35 +153,19 @@ console.log(setUpdateStock)
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price in 0.00 format (required)"
         />
-        <button type="submit">Update</button>
+        <button type="submit">Create Item</button>
       </form>
 
-      <form onSubmit={(e) => deleteStock(e, del, setStock)}>
-        <h2>Delete Stock Item</h2>
+      <form onSubmit={(e) => findFish(e, name, setUpdateStock)}>
+        <h2>Update Stock Item</h2>
+        <h3>Fish Name</h3>
+        <p>{name}</p>
         <input
-          type="text"
-          name="name"
-          onChange={(e) => setDel(e.target.value)}
-          placeholder="Fish Name"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="(required)"
         />
-        <button type="submit">Delete Fish</button>
+        <button type="submit">Find fish to update</button>
       </form>
-
-      <form
-          onSubmit={(e) =>
-            findFish(e, name, setUpdateStock)}>
-      <h2>Update Stock Item</h2>
-      <h3>Fish Name</h3>
-      <p>{name}</p>
-      <input
-        onChange={(e) => setName(e.target.value)}
-        placeholder="(required)"
-      />
-      <button type="submit" >
-        Find fish to update
-      </button>
-      </form>
-
 
       {updateStock ? (
         <form
@@ -238,6 +230,17 @@ console.log(setUpdateStock)
           </button>
         </form>
       ) : null}
+
+      <form onSubmit={(e) => deleteStock(e, del, setStock)}>
+        <h2>Delete Stock Item</h2>
+        <input
+          type="text"
+          name="name"
+          onChange={(e) => setDel(e.target.value)}
+          placeholder="Fish Name"
+        />
+        <button type="submit">Delete Fish</button>
+      </form>
 
       <h2 className="navText">Log Out</h2>
       <button type="submit" onClick={logoutHandler}>

@@ -186,6 +186,7 @@ export const findFish = async (e, name, setUpdateStock) => {
       });
       const data = await response.json();
       setUpdateStock(data);
+      console.log(data)
     } catch (error) {
       console.log(error);
     }
@@ -232,7 +233,7 @@ export const updateFish = async (
       }),
     });
     const data = await response.json();
-    setStock(data.fish);
+    setStock(data);
   } catch (error) {
     console.log(error);
   }

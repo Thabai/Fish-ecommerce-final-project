@@ -22,8 +22,6 @@ const [admin, setAdmin] = useState();
 const [stock, setStock] = useState([]);
 const [basket, setBasket] = useState([]);
 const [userFetch, setUserFetch] = useState([]);
-const [updateStock, setUpdateStock] = useState([]);
-
 
 useEffect(() => {
   authUser(setUser);
@@ -81,9 +79,7 @@ useEffect(() => {
               setUser={setUser}
               admin={admin}
               setAdmin={setAdmin}
-              updateStock={updateStock}
               setStock={setStock}
-              setUpdateStock={setUpdateStock}
             />
           </Route>
           <Route exact path="/paypal">
