@@ -96,6 +96,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
             </div>
           </form>
 
+
           <button
             className="logBtn"
             type="button"

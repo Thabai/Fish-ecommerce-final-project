@@ -14,7 +14,20 @@ export const authUser = async (setUser) => {
   }
 };
 
-export const fetchUsers = async (e, username, email, pass, name, surname, street, city, postcode, setUser, setUserAdmin, setUserFetch) => {
+export const fetchUsers = async (
+  e,
+  username,
+  email,
+  pass,
+  name,
+  surname,
+  street,
+  city,
+  postcode,
+  setUser,
+  setUserAdmin,
+  setUserFetch
+) => {
   e.preventDefault();
   try {
     let response;
@@ -30,7 +43,7 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
           surname: surname,
           street: street,
           city: city,
-          postcode: postcode
+          postcode: postcode,
         }),
       });
     } else {
@@ -50,15 +63,14 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
     if (data.user.admin === true) {
       setUserAdmin(data.user.admin);
     } else {
-    setUser(data.user);
-    setUserFetch(data);
-    console.log(data);
+      setUser(data.user);
+      setUserFetch(data);
+      console.log(data);
     }
   } catch (error) {
     console.log(error);
   }
 };
-
 
 //stock
 export const findAllFish = async (setStock) => {
@@ -72,8 +84,7 @@ export const findAllFish = async (setStock) => {
   }
 };
 
-
-//Users 
+//Users
 export const updateUserDetails = async (
   e,
   email,
@@ -158,19 +169,19 @@ export const createFish = async (
       social: social,
       breeding: breeding,
     };
-      response = await fetch(`${process.env.REACT_APP_REST_API}fish`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: name,
-          scientific: scientific,
-          img: img,
-          habitat: habitat,
-          description: description,
-          compatibility: compatibility,
-          quantity: quantity,
-          price: price,
-      })
+    response = await fetch(`${process.env.REACT_APP_REST_API}fish`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        scientific: scientific,
+        img: img,
+        habitat: habitat,
+        description: description,
+        compatibility: compatibility,
+        quantity: quantity,
+        price: price,
+      }),
     });
       const data = await response.json();
       setStock(data);
@@ -178,20 +189,24 @@ export const createFish = async (
       console.log(data)
   } catch (error) {
     console.log(error);
-}};
+  }
+};
 
 export const findFish = async (e, name, setUpdateStock) => {
-    e.preventDefault();
+  e.preventDefault();
   try {
-      const response = await fetch(`${process.env.REACT_APP_REST_API}fish/${name}`, {
+    const response = await fetch(
+      `${process.env.REACT_APP_REST_API}fish/${name}`,
+      {
         method: "GET",
-      });
-      const data = await response.json();
-      setUpdateStock(data);
-      console.log(data)
-    } catch (error) {
-      console.log(error);
-    }
+      }
+    );
+    const data = await response.json();
+    setUpdateStock(data);
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const updateFish = async (
@@ -242,19 +257,17 @@ export const updateFish = async (
   }
 };
 
-
-
 export const deleteStock = async (e, del, setStock) => {
   e.preventDefault();
   try {
     let response;
-      response = await fetch(`${process.env.REACT_APP_REST_API}fish/${del}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: del
-      })
-      });
+    response = await fetch(`${process.env.REACT_APP_REST_API}fish/${del}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: del,
+      }),
+    });
     await response.json();
     setStock();
   } catch (error) {

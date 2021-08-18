@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { createFish, deleteStock, updateFish, findFish } from "../utils";
 import { Redirect } from "react-router";
 
-const Admin = ({setUser, admin, setAdmin, setStock }) => {
+const Admin = ({ setUser, admin, setAdmin, setStock }) => {
   const [updateStock, setUpdateStock] = useState([]);
- const [name, setName] = useState();
- const [scientific, setScientific] = useState();
- const [img, setImg] = useState();
- const [hab, setHab] = useState();
- const [desc, setDesc] = useState();
- const [temperature, setTemperature] = useState();
- const [temperament, setTemperament] = useState();
+  const [name, setName] = useState();
+  const [scientific, setScientific] = useState();
+  const [img, setImg] = useState();
+  const [hab, setHab] = useState();
+  const [desc, setDesc] = useState();
+  const [temperature, setTemperature] = useState();
+  const [temperament, setTemperament] = useState();
   const [food, setFood] = useState();
   const [social, setSocial] = useState();
   const [breeding, setBreeding] = useState();
@@ -31,7 +31,6 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
   const [breedingC, setBreedingC] = useState();
   const [quantC, setQuantC] = useState();
   const [priceC, setPriceC] = useState();
-
 
   useEffect(() => {
     try {
@@ -266,6 +265,5 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
     </div>
   );
 };
-
 
 export default Admin;

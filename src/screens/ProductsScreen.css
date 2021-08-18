@@ -2,8 +2,11 @@
     background-color: rgba(137, 43, 226, 0.787);
     min-height: 100vh;
 }
-h2{
+/* h2 {
     margin-top: 2vh;
+
+} */
+.pageContainer {
 }
 .pageContainerProd {
     display: flex;

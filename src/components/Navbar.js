@@ -1,14 +1,12 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({user, admin, basket}) => {
+const Navbar = ({click, user, admin, basket}) => {
   return (
     <nav className="navbar">
       {/* logo */}
       <div className="navbar__logo">
-        <Link to="/">
           <h2>Fish Shopping Site</h2>
-        </Link>
       </div>
 
       {/* links */}
@@ -28,13 +26,11 @@ const Navbar = ({user, admin, basket}) => {
         user ? 
         <li>
           <Link to="/profile">
-            {/* Icon */}
             Profile
           </Link>
         </li> :
         <li>
           <Link to="/login">
-            {/* Icon */}
             Login
           </Link>
         </li>}
@@ -50,7 +46,7 @@ const Navbar = ({user, admin, basket}) => {
       </ul>
 
       {/* hamburger menu */}
-      <div className="hamburger__menu">
+      <div className="hamburger__menu" onClick={click}>
         <div></div>
         <div></div>
         <div></div>
