@@ -137,21 +137,21 @@ export const createFish = async (
   name,
   scientific,
   img,
-  hab,
-  desc,
+  habitat,
+  description,
   temperature,
   temperament,
   food,
   social,
   breeding,
-  quant,
+  quantity,
   price,
   setStock
 ) => {
   e.preventDefault();
   try {
     let response;
-    let compat = {
+    let compatibility = {
       temperature: temperature,
       temperament: temperament,
       food: food,
@@ -165,15 +165,15 @@ export const createFish = async (
           name: name,
           scientific: scientific,
           img: img,
-          habitat: hab,
-          description: desc,
-          compatibility: compat,
-          quantity: quant,
+          habitat: habitat,
+          description: description,
+          compatibility: compatibility,
+          quantity: quantity,
           price: price,
       })
     });
       const data = await response.json();
-      setStock(data.fish.name);
+      setStock(data.fish);
   } catch (error) {
     console.log(error);
 }};
@@ -197,21 +197,21 @@ export const updateFish = async (
   name,
   scientific,
   img,
-  hab,
-  desc,
+  habitat,
+  description,
   temperature,
   temperament,
   food,
   social,
   breeding,
-  quant,
+  quantity,
   price,
   setStock
 ) => {
   e.preventDefault();
   try {
     let response;
-    let compat = {
+    let compatibility = {
       temperature: temperature,
       temperament: temperament,
       food: food,
@@ -219,21 +219,22 @@ export const updateFish = async (
       breeding: breeding,
     };
     response = await fetch(`${process.env.REACT_APP_REST_API}fish`, {
-      method: "POST",
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: name,
         scientific: scientific,
         img: img,
-        habitat: hab,
-        description: desc,
-        compatibility: compat,
-        quantity: quant,
+        habitat: habitat,
+        description: description,
+        compatibility: compatibility,
+        quantity: quantity,
         price: price,
       }),
     });
     const data = await response.json();
-    setStock(data);
+    setStock(data.fish);
+    console.log(data)
   } catch (error) {
     console.log(error);
   }

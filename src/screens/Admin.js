@@ -18,6 +18,21 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
   const [price, setPrice] = useState();
   const [del, setDel] = useState();
 
+  //create
+  const [nameC, setNameC] = useState();
+  const [scientificC, setScientificC] = useState();
+  const [imgC, setImgC] = useState();
+  const [habC, setHabC] = useState();
+  const [descC, setDescC] = useState();
+  const [temperatureC, setTemperatureC] = useState();
+  const [temperamentC, setTemperamentC] = useState();
+  const [foodC, setFoodC] = useState();
+  const [socialC, setSocialC] = useState();
+  const [breedingC, setBreedingC] = useState();
+  const [quantC, setQuantC] = useState();
+  const [priceC, setPriceC] = useState();
+
+
   useEffect(() => {
     try {
       setName(updateStock.fish.name);
@@ -51,18 +66,18 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
         onSubmit={(e) =>
           createFish(
             e,
-            name,
-            scientific,
-            img,
-            hab,
-            desc,
-            temperature,
-            temperament,
-            food,
-            social,
-            breeding,
-            quant,
-            price,
+            nameC,
+            scientificC,
+            imgC,
+            habC,
+            descC,
+            temperatureC,
+            temperamentC,
+            foodC,
+            socialC,
+            breedingC,
+            quantC,
+            priceC,
             setStock
           )
         }
@@ -72,35 +87,35 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
         <input
           type="text"
           name="name"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setNameC(e.target.value)}
           placeholder="Fish Name (required)"
         />
         <h3>Scientific Name</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setScientific(e.target.value)}
+          onChange={(e) => setScientificC(e.target.value)}
           placeholder="Scientific Name (required)"
         />
         <h3>Image Link</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setImg(e.target.value)}
+          onChange={(e) => setImgC(e.target.value)}
           placeholder="Image (required)"
         />
         <h3>Habitat</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setHab(e.target.value)}
+          onChange={(e) => setHabC(e.target.value)}
           placeholder="Water Habitat Type"
         />
         <h3>Description</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setDesc(e.target.value)}
+          onChange={(e) => setDescC(e.target.value)}
           placeholder="Basic description (required)"
         />
         <h3>Compatibility Section</h3>
@@ -108,49 +123,49 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
         <input
           type="text"
           name="name"
-          onChange={(e) => setTemperature(e.target.value)}
+          onChange={(e) => setTemperatureC(e.target.value)}
           placeholder="Water Temperature"
         />
         <h3>Temperament</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setTemperament(e.target.value)}
+          onChange={(e) => setTemperamentC(e.target.value)}
           placeholder="Temperament"
         />
         <h3>Food Source</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setFood(e.target.value)}
+          onChange={(e) => setFoodC(e.target.value)}
           placeholder="Food Source"
         />
         <h3>Social</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setSocial(e.target.value)}
+          onChange={(e) => setSocialC(e.target.value)}
           placeholder="Social Information"
         />
         <h3>Breeding Type</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setBreeding(e.target.value)}
+          onChange={(e) => setBreedingC(e.target.value)}
           placeholder="Breeding Information"
         />
         <h3>Quantity in stock</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setQuant(e.target.value)}
+          onChange={(e) => setQuantC(e.target.value)}
           placeholder="Stock Number (required)"
         />
         <h3>Price</h3>
         <input
           type="text"
           name="name"
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => setPriceC(e.target.value)}
           placeholder="Price in 0.00 format (required)"
         />
         <button type="submit">Create Item</button>
@@ -223,7 +238,7 @@ const Admin = ({setUser, admin, setAdmin, setStock }) => {
           <p>{price}</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
-            placeholder="Price in 0.00 format (required)"
+            placeholder="Price in 0.00 format"
           />
           <button className="logBtn" type="submit">
             Update
