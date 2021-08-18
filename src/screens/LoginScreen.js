@@ -15,9 +15,9 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
   const [pass, setPass] = useState();
 
   return (
-    <div className="pageContainer">
-      <div className='overlay'>
-        <div className='formContainer'>
+    <div className="pageContainerLogin">
+      <div className='overlayLogin'>
+        <div className='formContainerLogin'>
       <div className="header">
         <h2>Welcome</h2>
         <h4 className='subText'>Please Log in or Sign up</h4>
