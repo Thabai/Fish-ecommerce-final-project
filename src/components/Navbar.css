@@ -1,7 +1,7 @@
 .navbar {
   width: 100vw;
   height: 10vh;
-  background-color: var(--paradise-pink);
+  background-color: var(--one);
   color: var(--white);
   display: flex;
   justify-content: space-between;
@@ -28,25 +28,29 @@
 
 .navbar__links > li > a {
   text-decoration: none;
-  color: var(--off-white);
+  color: var(--three);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
 }
 
 .navbar a:hover {
-  color: var(--dark-turquoise);
+  color: var(--four);
 }
 
 .navbar__links > li > a > span {
   display: flex;
   align-items: center;
   margin: 0 0.5rem 0;
-  color: var(--paradise-pink);
+  color: var(--three);
+}
+
+.navbar__links > li > a > span:hover {
+  color: var(--one);
 }
 
 .cart__link {
-  background: var(--off-white);
+  background: var(--two);
   padding: 0.5rem;
   display: flex;
   justify-content: center;
@@ -55,15 +59,16 @@
 }
 
 .cart__link:hover {
-  background: var(--dark-turquoise);
+  background: var(--three);
+  color: var(--two);
   transition: ease-in-out 0.2s;
 }
 
 .cart__pill {
   width: 2rem;
   height: 2rem;
-  background: var(--paradise-pink);
-  color: var(--off-white);
+  background: var(--one);
+  color: var(--three);
   margin-left: 0.5rem;
   border-radius: 50%;
   display: flex;
@@ -90,11 +95,11 @@
 .hamburger__menu > div {
   width: 100%;
   height: 0.2rem;
-  background: var(--off-white);
+  background: var(--three);
 }
 
 .hamburger__menu:hover > div {
-  background: var(--dark-turquoise);
+  background: var(--four);
 }
 
 @media (max-width: 960px) {
@@ -105,3 +110,10 @@
         display: flex;
     }
 }
+
+@media (max-width: 500px) {
+  .navbar__logo h2 {
+    font-size: 1rem;
+  }
+}
+

@@ -1,37 +1,43 @@
 import "./App.css";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+// Components
+import Navbar from "./components/Navbar";
+import Backdrop from "./components/Backdrop";
+import Sidedrawer from "./components/Sidedrawer";
 
 // Screens
 import HomeScreen from "./screens/HomeScreen";
 import CartScreen from "./screens/CartScreen";
 import ProductsScreen from "./screens/ProductsScreen";
-import {SingleProductScreen} from "./screens/SingleProductScreen";
+import { SingleProductScreen } from "./screens/SingleProductScreen";
 import LoginScreen from "./screens/LoginScreen";
 import Profile from "./screens/Profile";
 import Admin from "./screens/Admin";
 import PaypalScreen from "./screens/PaypalScreen";
 import { authUser } from "./utils";
 
-// Components
-import Navbar from './components/Navbar';
-
 const App = () => {
-const [user, setUser] = useState();
-const [admin, setAdmin] = useState();
-const [stock, setStock] = useState([]);
-const [basket, setBasket] = useState([]);
-const [userFetch, setUserFetch] = useState([]);
+  const [sideToggle, setSideToggle] = useState(false);
+  const [user, setUser] = useState();
+  const [admin, setAdmin] = useState();
+  const [stock, setStock] = useState([]);
+  const [basket, setBasket] = useState([]);
+  const [userFetch, setUserFetch] = useState([]);
 
-useEffect(() => {
-  authUser(setUser);
-}, [user]);
+  useEffect(() => {
+    authUser(setUser);
+  }, [user]);
 
   return (
     <Router>
-      <Navbar user={user} admin={admin} basket={basket} />
+      {/* Navbar */}
+      <Navbar user={user} admin={admin} basket={basket} click={() => setSideToggle(true)} />
       {/* SideDrawer */}
+      <Sidedrawer show={sideToggle} click={() => setSideToggle(false)} />
       {/* Backdrop */}
+      <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>
         <Switch>
           {/* Home screen */}
@@ -91,6 +97,6 @@ useEffect(() => {
       </main>
     </Router>
   );
-}
+};
 
 export default App;

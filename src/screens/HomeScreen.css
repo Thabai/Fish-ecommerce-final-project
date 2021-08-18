@@ -23,7 +23,7 @@ body {
 }
 h2 {
     font-size: 3rem;
-    color: white;
+    color: var(--white);
 }
 .title {
     text-align: center;

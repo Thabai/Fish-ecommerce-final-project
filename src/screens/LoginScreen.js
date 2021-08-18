@@ -91,6 +91,7 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
           className="logInput"
           onChange={(e) => setPass(e.target.value)}
           placeholder="Password"
+          type="password"
         />
 
         <button className="logBtn" type="submit">

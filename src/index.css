@@ -6,11 +6,11 @@
   padding: 0;
 
   /* Global Colour Declarations */
-  --dark-turquoise: #25ced1ff;
+  --one: #0081a7;
   --white: #ffffffff;
-  --linen: #fceadeff;
-  --coral: #ff8a5bff;
-  --paradise-pink: #ea526fff;
+  --two: #00afb9;
+  --three: #fed9b7;
+  --four: #f07167;
   --off-white: #eeeded;
 }
 

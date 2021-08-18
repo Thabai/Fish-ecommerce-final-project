@@ -63,7 +63,7 @@ return (
         <input onChange={(e) => setEmail(e.target.value)} />
         <h3>Change Password</h3>
         <p>{password}</p>
-        <input onChange={(e) => setPass(e.target.value)} />
+        <input type="password" onChange={(e) => setPass(e.target.value)} />
         <button className="logBtn" type="submit">
           Update
         </button>
