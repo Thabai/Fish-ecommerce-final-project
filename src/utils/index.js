@@ -58,6 +58,9 @@ export const fetchUsers = async (
         }
       );
     }
+    // if (response.status !== 200) {
+    //   throw response.message;
+    // }
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
     if (data.user.admin === true) {
@@ -65,10 +68,13 @@ export const fetchUsers = async (
     } else {
       setUser(data.user);
       setUserFetch(data);
-      console.log(data);
     }
   } catch (error) {
     console.log(error);
+      document.getElementById("message").innerHTML = "Check All Fields Are Filled Or Username And/Or Email Already In Use";
+        setTimeout(function () {
+          document.getElementById("message").innerHTML = "";
+        }, 3000);
   }
 };
 
