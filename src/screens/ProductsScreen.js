@@ -1,39 +1,41 @@
-import './ProductsScreen.css';
+import "./ProductsScreen.css";
 import { useEffect } from "react";
-import { findAllFish } from '../utils';
-import BoxCard from '../components/BoxCard';
+import { findAllFish } from "../utils";
+import BoxCard from "../components/BoxCard";
 
-const ProductsScreen = ({stock, setStock, basket, setBasket}) => {
-
-const onAdd = (stock) => {
-  const exist = basket.find((item) => item.name === stock.name);
-  if (exist) {
-    setBasket(
-      basket.map((item) =>
-        item.name === stock.name ? { ...exist, qty: exist.qty + 1 }: item
-      )
-    );
-  } else {
-    setBasket([...basket, { ...stock, qty: 1 }]);
-  }
-};
-
+const ProductsScreen = ({ stock, setStock, basket, setBasket }) => {
+  const onAdd = (stock) => {
+    const exist = basket.find((item) => item.name === stock.name);
+    if (exist) {
+      setBasket(
+        basket.map((item) =>
+          item.name === stock.name ? { ...exist, qty: exist.qty + 1 } : item
+        )
+      );
+    } else {
+      setBasket([...basket, { ...stock, qty: 1 }]);
+    }
+    document.getElementById("message").innerHTML = "Item Added To Cart";
+    setTimeout(function () {
+      document.getElementById("message").innerHTML = "";
+    }, 2000);
+  };
 
   useEffect(() => {
     findAllFish(setStock);
   }, [setStock]);
-  
-    return (
-      <div className="pageContainer">
-        <div className='overlay'>
-        <div className="title">
+
+  return (
+    <div className="productsScreen">
+      <div className="productsScreen__title">
         <h2>Available Fish</h2>
-        </div>
-        <div className="main">
-          <BoxCard stock={stock} onAdd={onAdd} />
-        </div>
-      </div></div>
-    );
-}
+      </div>
+      <div id="messageContainer"></div>
+      <div className="productsScreen__products">
+        <BoxCard stock={stock} onAdd={onAdd} />
+      </div>
+    </div>
+  );
+};
 
 export default ProductsScreen;

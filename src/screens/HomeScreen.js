@@ -1,8 +1,7 @@
-import './HomeScreen.css'
+import "./HomeScreen.css";
 import React, { useEffect } from "react";
-import { findAllFish } from '../utils';
-import BoxCardHome from '../components/BoxCardHome';
-
+import { findAllFish } from "../utils";
+import BoxCardHome from "../components/BoxCardHome";
 
 const HomeScreen = ({ stock, setStock }) => {
   useEffect(() => {
@@ -10,16 +9,15 @@ const HomeScreen = ({ stock, setStock }) => {
   }, [setStock]);
 
   return (
-    <div className="pageContainer">
-      <div className='overlay'>
-      <div className='title'>
-      <h2>Home</h2>
-      </div>
-    
-      <div className="main">
-        <BoxCardHome stock={stock} />
-    </div></div></div>
+    <div className="homescreen">
+      <div className="homescreen__title">
+          <h2>Home</h2>
+        </div>
 
+        <div className="homescreen_products">
+          <BoxCardHome stock={stock} />
+        </div>
+      </div>
   );
 };
 

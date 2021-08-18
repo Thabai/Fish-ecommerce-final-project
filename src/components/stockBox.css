@@ -1,33 +1,122 @@
-button {
- width: 10vw;
- height: 5vh;
- border-radius: 5vh 5vh 5vh 5vh;
-}
-.stock{
-  max-width: 20vw;
-  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  padding: 1vh 2vw 1vh 1vw;
+.stockBox {
+  width: 300px;
+  padding: 1rem;
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin: 8px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  align-content: center;
-  list-style: none;
-  margin: 1vh 1vw 1vh 1vw;
+}
+
+.stockBox > img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.stockBox__info > p {
+  margin-bottom: 8px;
   text-align: center;
-  background-color: rgba(0, 128, 128, 0.9);
-  
- 
 }
-.cardName{
-  font-weight: bolder;
-  color: white;
+
+.stockBox__name {
+  font-size: 1rem;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--one);
 }
-p {
-  margin: 1vh;
+
+.stockBox__description {
+  font-size: 0.8rem;
 }
-img {
-  margin: 1vh;
- 
+
+.stockBox__price {
+  font-weight: 700;
 }
-.price{
-  color: white;
+
+.cart__button {
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: var(--two);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+}
+
+.cart__button:hover {
+  background: var(--one);
+  transition: ease-in-out 0.3s;
+}
+
+.stockBoxinfo__link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--one);
+  padding: 8px 16px;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.stockBoxinfo__link:hover {
+  color: var(--four);
+}
+
+@media (max-width: 1232px) {
+  .stockBox {
+    width: 350px;
+  }
+}
+@media (max-width: 1115px) {
+  .stockBox {
+    width: 330px;
+  }
+}
+@media (max-width: 1028px) {
+  .stockBox {
+    width: 300px;
+  }
+}
+@media (max-width: 950px) {
+  .stockBox {
+    width: 400px;
+  }
+}
+
+@media (max-width: 830px) {
+  .stockBox {
+    width: 330px;
+  }
+}
+
+@media (max-width: 700px) {
+  .stockBox {
+    width: 290px;
+  }
+}
+@media (max-width: 630px) {
+  .stockBox {
+    width: 450px;
+  }
+}
+@media (max-width: 500px) {
+  .stockBox {
+    width: 350px;
+  }
+}
+@media (max-width: 400px) {
+  .stockBox {
+    width: 300px;
+  }
 }
