@@ -52,8 +52,7 @@ export const fetchUsers = async (e, username, email, pass, name, surname, street
     } else {
     setUser(data.user);
     setUserFetch(data);
-    console.log(data)
-    console.log(data)
+    console.log(data);
     }
   } catch (error) {
     console.log(error);
