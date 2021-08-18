@@ -15,6 +15,7 @@ const HomeScreen = ({ stock, setStock }) => {
         <div className="title">
           <h2>Home</h2>
         </div>
+        {stock.length === 0 && <div>Loading Please Wait</div>}}
         {stock.length > 0 ? (
           <div className="main">
             <BoxCardHome stock={stock} />
