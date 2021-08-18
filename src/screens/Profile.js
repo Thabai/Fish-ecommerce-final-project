@@ -26,8 +26,6 @@ const Profile = ({ user, setUser, userFetch}) => {
     }
   }, [userFetch]);
 
-  console.log(userFetch)
-
   const logoutHandler = (e) => {
     e.preventDefault();
     localStorage.removeItem("MyToken");
@@ -38,11 +36,25 @@ return (
   <div className="pageContainer">
     <h1 className="header">User settings</h1>
     <p className="navText">Update profile settings below</p>
+    <div id="message"></div>
 
     {userFetch ? (
-      <form onSubmit={(e) =>
-           updateUserDetails(e, email, password, name, surname, street, city, postcode, user, setUser)
-        }>
+      <form
+        onSubmit={(e) =>
+          updateUserDetails(
+            e,
+            email,
+            password,
+            name,
+            surname,
+            street,
+            city,
+            postcode,
+            user,
+            setUser
+          )
+        }
+      >
         <h3>Change First Name</h3>
         <p>{name}</p>
         <input onChange={(e) => setName(e.target.value)} />
