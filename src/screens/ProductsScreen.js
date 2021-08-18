@@ -21,7 +21,7 @@ const onAdd = (stock) => {
 
   useEffect(() => {
     findAllFish(setStock);
-  }, []);
+  }, [setStock]);
   
     return (
       <div className="pageContainer">

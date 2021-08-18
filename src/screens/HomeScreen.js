@@ -7,7 +7,7 @@ import BoxCardHome from '../components/BoxCardHome';
 const HomeScreen = ({ stock, setStock }) => {
   useEffect(() => {
     findAllFish(setStock);
-  }, []);
+  }, [setStock]);
 
   return (
     <div className="pageContainer">
