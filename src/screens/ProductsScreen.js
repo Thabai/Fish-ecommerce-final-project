@@ -21,7 +21,7 @@ const onAdd = (stock) => {
       "Item Added To Cart";
   setTimeout(function () {
     document.getElementById("message").innerHTML = "";
-  }, 2000);
+  }, 1000);
 };
 
   useEffect(() => {

@@ -39,7 +39,7 @@ const Navbar = ({click, user, admin, basket}) => {
             <span>
               <i className="fas fa-shopping-cart" id="cart__icon"></i>
               Cart
-              <span className="cart__pill">{basket.qty}</span>
+              <span className="cart__pill">{basket.length}</span>
             </span>
           </Link>
         </li>

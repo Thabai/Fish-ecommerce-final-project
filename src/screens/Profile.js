@@ -84,6 +84,7 @@ const Profile = ({ user, setUser, userFetch }) => {
       <div className="user__controls">
         <button className="logBtn" type="submit" onClick={logoutHandler}>
           Log Out
+          </button>
 
         <button
           className="logBtn"
