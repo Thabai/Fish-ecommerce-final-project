@@ -118,8 +118,10 @@ export const updateUserDetails = async (
     const data = await response.json();
     console.log(data);
     setUser(data);
+    document.getElementById("message").innerHTML = "Profile Updated Successfully";
   } catch (error) {
     console.log(error);
+    document.getElementById("message").innerHTML = error;
   }
 };
 
@@ -183,12 +185,16 @@ export const createFish = async (
         price: price,
       }),
     });
+    if (response.status !== 200) {
+      throw response.message;
+    }
       const data = await response.json();
       setStock(data);
-      console.log(data.fish)
-      console.log(data)
+      console.log(response)
+      document.getElementById("message").innerHTML =  "Item Created Successfully";
   } catch (error) {
-    console.log(error);
+    document.getElementById("message").innerHTML = "Check required fields have data";
+
   }
 };
 
@@ -201,11 +207,16 @@ export const findFish = async (e, name, setUpdateStock) => {
         method: "GET",
       }
     );
+     if (response.status !== 200) {
+       throw response.message;
+     }
     const data = await response.json();
     setUpdateStock(data);
+    document.getElementById("message").innerHTML = "Item Name Found Successfully";
     console.log(data);
   } catch (error) {
     console.log(error);
+    document.getElementById("message").innerHTML = "Fish Name Not Found";
   }
 };
 
@@ -249,11 +260,17 @@ export const updateFish = async (
         price: price,
       }),
     });
+     if (response.status !== 200) {
+       throw response.message;
+     }
     const data = await response.json();
     setStock(data);
+    document.getElementById("message").innerHTML =
+      "Item Updated Successfully";
     console.log(data)
   } catch (error) {
     console.log(error);
+     document.getElementById("message").innerHTML = "Check Update Fields";
   }
 };
 
@@ -268,9 +285,14 @@ export const deleteStock = async (e, del, setStock) => {
         name: del,
       }),
     });
+    if (response.status !== 200) {
+      throw response.message;
+    }
     await response.json();
     setStock();
+     document.getElementById("message").innerHTML = "Item Deleted Successfully";
   } catch (error) {
     console.log(error);
+    document.getElementById("message").innerHTML = "Check Field Data or Fish Not Found";
   }
 };

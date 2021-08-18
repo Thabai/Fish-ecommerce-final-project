@@ -15,7 +15,13 @@ const onAdd = (stock) => {
     );
   } else {
     setBasket([...basket, { ...stock, qty: 1 }]);
+    
   }
+  document.getElementById("message").innerHTML =
+      "Item Added To Cart";
+  setTimeout(function () {
+    document.getElementById("message").innerHTML = "";
+  }, 2000);
 };
 
 
@@ -25,14 +31,16 @@ const onAdd = (stock) => {
   
     return (
       <div className="pageContainerProd">
-        <div className='overlayProd'>
-        <div className="title">
-        <h2>Available Fish</h2>
+        <div className="overlayProd">
+          <div className="title">
+            <h2>Available Fish</h2>
+          </div>
+          <div id="message"></div>
+          <div className="main">
+            <BoxCard stock={stock} onAdd={onAdd} />
+          </div>
         </div>
-        <div className="main">
-          <BoxCard stock={stock} onAdd={onAdd} />
-        </div>
-      </div></div>
+      </div>
     );
 }
 
