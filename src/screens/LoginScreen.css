@@ -1,5 +1,5 @@
 
-.overlay {
+.overlayLogin {
     background-color: rgba(137, 43, 226, 0.787);
     min-height: 100vh;
     min-width: 100vw;
@@ -17,7 +17,7 @@
     padding: 5vh 10vw 5vh 10vw;
   
 }
-.pageContainer{
+.pageContainerLogin{
    display: flex;
    
   
@@ -35,7 +35,7 @@
     text-align: center;
     margin: 2vh 2vh 2vh 2vh;
 }
-.formContainer {
+.formContainerLogin {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 128, 128, 0.685);
