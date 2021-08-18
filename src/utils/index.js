@@ -173,7 +173,9 @@ export const createFish = async (
       })
     });
       const data = await response.json();
-      setStock(data.fish);
+      setStock(data);
+      console.log(data.fish)
+      console.log(data)
   } catch (error) {
     console.log(error);
 }};
@@ -233,7 +235,7 @@ export const updateFish = async (
       }),
     });
     const data = await response.json();
-    setStock(data.fish);
+    setStock(data);
     console.log(data)
   } catch (error) {
     console.log(error);
