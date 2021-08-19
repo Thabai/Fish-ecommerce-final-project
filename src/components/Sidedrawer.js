@@ -8,7 +8,7 @@ const Sidedrawer = ({ show, click, basket }) => {
     sideDrawerClass.push("show");
   }
   return (
-    <div className={sideDrawerClass.join(" ")}>
+    <div className={sideDrawerClass.join}>
       <ul className="sidedrawer__links" onClick={click}>
         <li>
           <Link to="/">
@@ -29,7 +29,7 @@ const Sidedrawer = ({ show, click, basket }) => {
           <Link to="/cart">
             <i className="fas fa-shopping-cart"></i>
             <span>
-              Cart{" "}
+              Cart
               <span className="sidedrawer__cartbadge">{basket.length}</span>
             </span>
           </Link>
