@@ -15,9 +15,7 @@ const StockBox = ({ data, onAdd }) => {
         </p>
         <p className="stockBox__price">Price: £{data.price.toFixed(2)}</p>
           <button className="cart__button" onClick={() => onAdd(data)}>Add to cart</button>
-        <Link to={`/${data.name}`} className="stockBoxinfo__link">
-          More Info
-        </Link>
+      
       </div>
     </div>
   );

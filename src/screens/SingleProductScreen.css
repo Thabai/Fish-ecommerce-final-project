@@ -1,0 +1,53 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.wrapper {
+    max-height: 60vh;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+
+}
+
+.fishImage {
+    max-width: 30vw;
+    max-height: 20vh;
+    
+}
+.singleproductscreen {
+    height: 75vh;   
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vw;
+    margin-top: 10vh;
+    padding: 5vh 5vh 5vh 5vh;
+    text-align: center;
+    justify-content: space-around;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+}
+.compatInfo {
+    margin-top: 10vh;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    height: 40vh;
+    min-width: 30vw;
+    margin-left: 10vw;
+    padding: 5vh 5vh 5vh 5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.singleProdH {
+   color: teal !important;
+   margin: 1vh;
+}
+.bright{
+    filter: brightness(1.5);
+}
+.titleBox{
+    text-decoration: underline;
+}
