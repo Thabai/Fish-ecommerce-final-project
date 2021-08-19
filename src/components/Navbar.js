@@ -6,7 +6,7 @@ const Navbar = ({ click, user, admin, basket }) => {
     <nav className="navbar">
       {/* logo */}
       <div className="navbar__logo">
-          <h2>Fish Shopping Site</h2>
+          <h2>Little Swimmers</h2>
       </div>
 
       {/* links */}
