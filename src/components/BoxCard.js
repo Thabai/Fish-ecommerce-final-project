@@ -1,6 +1,7 @@
 import StockBox from "./stockBox";
 import React from "react";
 
+
 const BoxCard = ({ stock, onAdd }) => {
   return (
     <div className="cards">
@@ -11,3 +12,4 @@ const BoxCard = ({ stock, onAdd }) => {
   );
 };
 export default BoxCard;
+

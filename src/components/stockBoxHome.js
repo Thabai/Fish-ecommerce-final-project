@@ -6,7 +6,6 @@ const StockBoxHome = ({ data }) => {
   return (
     <div className="product">
       <img src={data.img} alt="" />
-
       <div className="product__info">
         <p className="info__name">{data.name}</p>
         <p className="info__description">

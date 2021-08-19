@@ -58,6 +58,9 @@ export const fetchUsers = async (
         }
       );
     }
+    // if (response.status !== 200) {
+    //   throw response.message;
+    // }
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
     if (data.user.admin === true) {
@@ -65,10 +68,13 @@ export const fetchUsers = async (
     } else {
       setUser(data.user);
       setUserFetch(data);
-      console.log(data);
     }
   } catch (error) {
     console.log(error);
+      document.getElementById("message").innerHTML = "Check All Fields Are Filled Or Username And/Or Email Already In Use";
+        setTimeout(function () {
+          document.getElementById("message").innerHTML = "";
+        }, 3000);
   }
 };
 
@@ -118,8 +124,7 @@ export const updateUserDetails = async (
     const data = await response.json();
     console.log(data);
     setUser(data);
-    document.getElementById("message").innerHTML =
-      "Profile Updated Successfully";
+    document.getElementById("message").innerHTML = "Profile Updated Successfully";
   } catch (error) {
     console.log(error);
     document.getElementById("message").innerHTML = error;
@@ -189,14 +194,12 @@ export const createFish = async (
     if (response.status !== 200) {
       throw response.message;
     }
-    const data = await response.json();
-    setStock(data);
-    console.log(response);
-    document.getElementById("message").innerHTML = "Item Created Successfully";
+      const data = await response.json();
+      setStock(data);
+      console.log(response)
+      document.getElementById("message").innerHTML =  "Item Created Successfully";
   } catch (error) {
-    console.log(error);
-    document.getElementById("message").innerHTML =
-      "Check required fields have data";
+    document.getElementById("message").innerHTML = "Check required fields have data";
   }
 };
 
@@ -209,13 +212,12 @@ export const findFish = async (e, name, setUpdateStock) => {
         method: "GET",
       }
     );
-    if (response.status !== 200) {
-      throw response.message;
-    }
+     if (response.status !== 200) {
+       throw response.message;
+     }
     const data = await response.json();
     setUpdateStock(data);
-    document.getElementById("message").innerHTML =
-      "Item Name Found Successfully";
+    document.getElementById("message").innerHTML = "Item Name Found Successfully";
     console.log(data);
   } catch (error) {
     console.log(error);
@@ -263,16 +265,17 @@ export const updateFish = async (
         price: price,
       }),
     });
-    if (response.status !== 200) {
-      throw response.message;
-    }
+     if (response.status !== 200) {
+       throw response.message;
+     }
     const data = await response.json();
     setStock(data);
-    document.getElementById("message").innerHTML = "Item Updated Successfully";
-    console.log(data);
+    document.getElementById("message").innerHTML =
+      "Item Updated Successfully";
+    console.log(data)
   } catch (error) {
     console.log(error);
-    document.getElementById("message").innerHTML = "Check Update Fields";
+     document.getElementById("message").innerHTML = "Check Update Fields";
   }
 };
 
@@ -292,10 +295,9 @@ export const deleteStock = async (e, del, setStock) => {
     }
     await response.json();
     setStock();
-    document.getElementById("message").innerHTML = "Item Deleted Successfully";
+     document.getElementById("message").innerHTML = "Item Deleted Successfully";
   } catch (error) {
     console.log(error);
-    document.getElementById("message").innerHTML =
-      "Check Field Data or Fish Not Found";
+    document.getElementById("message").innerHTML = "Check Field Data or Fish Not Found";
   }
 };
