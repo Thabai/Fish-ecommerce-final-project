@@ -1,9 +1,5 @@
 import './SingleProductScreen.css';
 import { Route } from "react-router-dom";
-import { Link } from 'react-router-dom';
-
-
-
 
 const ProductScreen = (fish) => {
     return (
@@ -11,7 +7,7 @@ const ProductScreen = (fish) => {
       <div className="singleproductscreen">
         <h3 className='singleProdH'>Name: <span className='bright'>{fish.value.name}</span></h3>
         <h3 className='singleProdH'>Scientific Name: <span className='bright'> {fish.value.scientific}</span></h3>
-        <img className='fishImage' src={fish.value.img} alt="Fish Image" />
+        <img className='fishImage' src={fish.value.img} alt="Fish" />
         <p><span className='singleProdH'>About:</span> {fish.value.description}</p>
         <h3 className='singleProdH'>Habitat: <span className='bright'>{fish.value.habitat}</span></h3>
         <h3 className='singleProdH'>Price: <span className='bright'>£{fish.value.price}</span></h3>
