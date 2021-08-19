@@ -26,7 +26,6 @@ const ProductScreen = (fish) => {
           <h3 className='singleProdH'>Social:<span className='bright'>{fish.value.compatibility.social}</span> </h3>
           <h3 className='singleProdH'>Breeding: <span className='bright'>{fish.value.compatibility.breeding}</span></h3>
           {/* <button className="cart__button" onClick={() => onAdd(data)}>Add to cart</button> */}
-   
       </div>
         </div>
     );
