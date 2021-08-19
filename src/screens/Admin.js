@@ -58,6 +58,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
     setAdmin();
     setUser();
   };
+   console.log(updateStock);
 
   return (
     <div className="admin">
@@ -186,8 +187,9 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
         />
         <button type="submit">Find fish to update</button>
       </form>
+     
 
-      {updateStock ? (
+      {updateStock.length !== 0 ? (
         <form
           className="admin__form"
           onSubmit={(e) =>

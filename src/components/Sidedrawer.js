@@ -8,7 +8,7 @@ const Sidedrawer = ({ show, click, basket }) => {
     sideDrawerClass.push("show");
   }
   return (
-    <div className={sideDrawerClass.join(" ")}>
+    <div className={sideDrawerClass.join}>
       <ul className="sidedrawer__links" onClick={click}>
         <li>
           <Link to="/">
