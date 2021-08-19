@@ -5,7 +5,7 @@ import React from 'react';
 
 
 
-const CartScreen = ({user, admin, basket, setBasket}) => {
+const CartScreen = ({user, basket, setBasket}) => {
 const history = useHistory();
 const navigateTo = () => history.push("/paypal");
 
