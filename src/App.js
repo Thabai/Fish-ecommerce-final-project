@@ -35,7 +35,7 @@ const App = () => {
       {/* Navbar */}
       <Navbar user={user} admin={admin} basket={basket} click={() => setSideToggle(true)} />
       {/* SideDrawer */}
-      <Sidedrawer show={sideToggle} click={() => setSideToggle(false)} />
+      <Sidedrawer basket={basket} show={sideToggle} click={() => setSideToggle(false)}  />
       {/* Backdrop */}
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>

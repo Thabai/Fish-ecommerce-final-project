@@ -1,7 +1,7 @@
 import "./Sidedrawer.css";
 import { Link } from "react-router-dom";
 
-const Sidedrawer = ({ show, click }) => {
+const Sidedrawer = ({ show, click, basket }) => {
   const sideDrawerClass = ["sidedrawer"];
 
   if (show) {
@@ -29,7 +29,7 @@ const Sidedrawer = ({ show, click }) => {
           <Link to="/cart">
             <i className="fas fa-shopping-cart"></i>
             <span>
-              Cart <span className="sidedrawer__cartbadge">0</span>
+              Cart <span className="sidedrawer__cartbadge">{basket.length}</span>
             </span>
           </Link>
         </li>

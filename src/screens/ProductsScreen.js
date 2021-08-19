@@ -30,7 +30,7 @@ const ProductsScreen = ({ stock, setStock, basket, setBasket }) => {
       <div className="productsScreen__title">
         <h2>Available Fish</h2>
       </div>
-      <div id="messageContainer"></div>
+      <div id="message"></div>
       <div className="productsScreen__products">
         <BoxCard stock={stock} onAdd={onAdd} />
       </div>
