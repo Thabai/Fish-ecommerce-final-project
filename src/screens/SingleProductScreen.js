@@ -10,7 +10,7 @@ const ProductScreen = (fish) => {
         <img className='fishImage' src={fish.value.img} alt="Fish" />
         <p><span className='singleProdH'>About:</span> {fish.value.description}</p>
         <h3 className='singleProdH'>Habitat: <span className='bright'>{fish.value.habitat}</span></h3>
-        <h3 className='singleProdH'>Price: <span className='bright'>£{fish.value.price}</span></h3>
+        <h3 className='singleProdH'>Price: <span className='bright'>£{fish.value.price.toFixed(2)}</span></h3>
         <h3 className='singleProdH'>Stock: <span className='bright'>{fish.value.quantity}</span></h3>
      
       </div> 
