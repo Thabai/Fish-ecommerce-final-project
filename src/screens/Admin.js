@@ -60,10 +60,11 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
   };
 
   return (
-    <div className="pageContainer">
-      <h3>Admin</h3>
+    <div className="admin">
+      <p className="admin__title">Admin</p>
       <div id="message"></div>
       <form
+        className="admin__form"
         onSubmit={(e) =>
           createFish(
             e,
@@ -83,86 +84,86 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
           )
         }
       >
-        <h2>Create Stock Item</h2>
-        <h3>Fish Name</h3>
+        <p className="admin__title">Create Stock Item</p>
+        <p className="admin__note">Fish Name</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setNameC(e.target.value)}
           placeholder="Fish Name (required)"
         />
-        <h3>Scientific Name</h3>
+        <p className="admin__note">Scientific Name</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setScientificC(e.target.value)}
           placeholder="Scientific Name (required)"
         />
-        <h3>Image Link</h3>
+        <p className="admin__note">Image URL</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setImgC(e.target.value)}
           placeholder="Image (required)"
         />
-        <h3>Habitat</h3>
+        <p className="admin__note">Habitat</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setHabC(e.target.value)}
           placeholder="Water Habitat Type"
         />
-        <h3>Description</h3>
+        <p className="admin__note">Description</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setDescC(e.target.value)}
           placeholder="Basic description (required)"
         />
-        <h3>Compatibility Section</h3>
-        <h3>Temperature</h3>
+        <p className="admin__title">Compatability</p>
+        <p className="admin__note">Temperature</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setTemperatureC(e.target.value)}
           placeholder="Water Temperature"
         />
-        <h3>Temperament</h3>
+        <p className="admin__note">Temperament</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setTemperamentC(e.target.value)}
           placeholder="Temperament"
         />
-        <h3>Food Source</h3>
+        <p className="admin__note">Food Source</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setFoodC(e.target.value)}
           placeholder="Food Source"
         />
-        <h3>Social</h3>
+        <p className="admin__note">Social</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setSocialC(e.target.value)}
           placeholder="Social Information"
         />
-        <h3>Breeding Type</h3>
+        <p className="admin__note">Breeding Type</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setBreedingC(e.target.value)}
           placeholder="Breeding Information"
         />
-        <h3>Quantity in stock</h3>
+        <p className="admin__note">Stock Quantity</p>
         <input
           type="text"
           name="name"
           onChange={(e) => setQuantC(e.target.value)}
           placeholder="Stock Number (required)"
         />
-        <h3>Price</h3>
+        <p className="admin__note">Price</p>
         <input
           type="text"
           name="name"
@@ -172,9 +173,12 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
         <button type="submit">Create Item</button>
       </form>
 
-      <form onSubmit={(e) => findFish(e, name, setUpdateStock)}>
-        <h2>Update Stock Item</h2>
-        <h3>Fish Name</h3>
+      <form
+        className="admin__form"
+        onSubmit={(e) => findFish(e, name, setUpdateStock)}
+      >
+        <p className="admin__title">Update Stock Item</p>
+        <p className="admin__note">Fish Name</p>
         <p>{name}</p>
         <input
           onChange={(e) => setName(e.target.value)}
@@ -185,6 +189,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
 
       {updateStock ? (
         <form
+          className="admin__form"
           onSubmit={(e) =>
             updateFish(
               e,
@@ -204,38 +209,38 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
             )
           }
         >
-          <h3>Scientific Name</h3>
+          <p className="admin__note">Scientific Name</p>
           <p>{scientific}</p>
           <input onChange={(e) => setScientific(e.target.value)} />
-          <h3>Image Link</h3>
+          <p className="admin__note">Image URL</p>
           <p>{img}</p>
           <input onChange={(e) => setImg(e.target.value)} />
-          <h3>Habitat</h3>
+          <p className="admin__note">Habitat</p>
           <p>{hab}</p>
           <input onChange={(e) => setHab(e.target.value)} />
-          <h3>Description</h3>
+          <p className="admin__note">Description</p>
           <p>{desc}</p>
           <input onChange={(e) => setDesc(e.target.value)} />
-          <h3>Compatibility Section</h3>
-          <h3>Temperature</h3>
+          <p className="admin__title">Compatability</p>
+          <p className="admin__note">Temperature</p>
           <p>{temperature}</p>
           <input onChange={(e) => setTemperature(e.target.value)} />
-          <h3>Temperament</h3>
+          <p className="admin__note">Temperament</p>
           <p>{temperament}</p>
           <input onChange={(e) => setTemperament(e.target.value)} />
-          <h3>Food Source</h3>
+          <p className="admin__note">Food Source</p>
           <p>{food}</p>
           <input onChange={(e) => setFood(e.target.value)} />
-          <h3>Social</h3>
+          <p className="admin__note">Social</p>
           <p>{social}</p>
           <input onChange={(e) => setSocial(e.target.value)} />
-          <h3>Breeding Type</h3>
+          <p className="admin__note">Breeding Type</p>
           <p>{breeding}</p>
           <input onChange={(e) => setBreeding(e.target.value)} />
-          <h3>Quantity in stock</h3>
+          <p className="admin__note">Stock Quantity</p>
           <p>{quant}</p>
           <input onChange={(e) => setQuant(e.target.value)} />
-          <h3>Price</h3>
+          <p className="admin__note">Price</p>
           <p>{price}</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
@@ -247,8 +252,11 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
         </form>
       ) : null}
 
-      <form onSubmit={(e) => deleteStock(e, del, setStock)}>
-        <h2>Delete Stock Item</h2>
+      <form
+        className="admin__form"
+        onSubmit={(e) => deleteStock(e, del, setStock)}
+      >
+        <p className="admin__title">Delete Stock Item</p>
         <input
           type="text"
           name="name"
@@ -258,10 +266,12 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
         <button type="submit">Delete Fish</button>
       </form>
 
-      <h2 className="navText">Log Out</h2>
-      <button type="submit" onClick={logoutHandler}>
-        Log Out
-      </button>
+      <form className="admin__form">
+        <p className="admin__title">Log Out</p>
+        <button type="submit" onClick={logoutHandler}>
+          Log Out
+        </button>
+      </form>
 
       {!admin && <Redirect to="/" />}
     </div>
