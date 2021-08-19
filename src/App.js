@@ -33,9 +33,18 @@ const App = () => {
   return (
     <Router>
       {/* Navbar */}
-      <Navbar user={user} admin={admin} basket={basket} click={() => setSideToggle(true)} />
+      <Navbar
+        user={user}
+        admin={admin}
+        basket={basket}
+        click={() => setSideToggle(true)}
+      />
       {/* SideDrawer */}
-      <Sidedrawer show={sideToggle} basket={basket} click={() => setSideToggle(false)} />
+      <Sidedrawer
+        show={sideToggle}
+        basket={basket}
+        click={() => setSideToggle(false)}
+      />
       {/* Backdrop */}
       <Backdrop show={sideToggle} click={() => setSideToggle(false)} />
       <main>
@@ -55,12 +64,7 @@ const App = () => {
           </Route>
           {/* Cart screen */}
           <Route exact path="/cart">
-            <CartScreen
-              user={user}
-              admin={admin}
-              basket={basket}
-              setBasket={setBasket}
-            />
+            <CartScreen user={user} basket={basket} setBasket={setBasket} />
           </Route>
           {/* Login page */}
           <Route exact path="/login">
@@ -89,7 +93,7 @@ const App = () => {
             />
           </Route>
           <Route exact path="/paypal">
-            <PaypalScreen />
+            <PaypalScreen basket={basket} />
           </Route>
           {/* Product screen */}
           <SingleProductScreen stock={stock} />

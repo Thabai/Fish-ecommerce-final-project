@@ -75,7 +75,7 @@
     align-items: center;
     border-radius: 5px;
     border: none;
-    margin-left: 1vh;
+    margin: 1rem;
   }
   
   .logBtn:hover {

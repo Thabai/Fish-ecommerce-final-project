@@ -33,6 +33,7 @@ const onAdd = (stock) => {
       <div className="productsScreen__title">
         <h2>Available Fish</h2>
       </div>
+      
       <div id="message"></div>
       <div className="productsScreen__products">
         <BoxCard stock={stock} onAdd={onAdd} />

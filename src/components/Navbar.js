@@ -1,12 +1,12 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = ({click, user, admin, basket}) => {
+const Navbar = ({ click, user, admin, basket }) => {
   return (
     <nav className="navbar">
       {/* logo */}
       <div className="navbar__logo">
-          <h2>Fish Shopping Site</h2>
+          <h2>Little Swimmers</h2>
       </div>
 
       {/* links */}

@@ -18,16 +18,14 @@ const ProductScreen = (fish) => {
             <h3>Breeding: {fish.value.breeding}</h3>
             <h3>Price: {fish.value.price}</h3>
             <h3>Stock: {fish.value.quantity}</h3>
-            
-
         </div>
     )
 };
 
-const SingleProductScreen = (props) => {
+const SingleProductScreen = (fish) => {
   return (
     <div>
-      {props.stock.map((value, index) => {
+      {fish.stock.map((value, index) => {
           return (
             <Route
               key={index}
