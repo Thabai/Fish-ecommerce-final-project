@@ -6,7 +6,7 @@ const ProductScreen = (fish) => {
       <div className="singleproductscreen">
         <h1>Name: {fish.value.name}</h1>
         <h2>Scientific Name: {fish.value.scientific}</h2>
-        <img src={fish.value.img} alt="Fish Image" />
+        <img src={fish.value.img} alt="Fish" />
         <p>About: {fish.value.description}</p>
         <h2>Habitat: {fish.value.habitat}</h2>
         <h3>Price: {fish.value.price}</h3>
