@@ -93,7 +93,7 @@ const App = () => {
             />
           </Route>
           <Route exact path="/paypal">
-            <PaypalScreen basket={basket} />
+            <PaypalScreen basket={basket}/>
           </Route>
           {/* Product screen */}
           <SingleProductScreen stock={stock} />

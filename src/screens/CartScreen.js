@@ -42,7 +42,7 @@ const navigateTo = () => history.push("/paypal");
   };
 
   const itemsPrice = basket.reduce((acc, stock) => acc + stock.qty * stock.price, 0);
-  const taxPrice = itemsPrice * 0.14;
+  const taxPrice = Math.floor(itemsPrice * 0.14);
   const shippingPrice = itemsPrice > 50 ? 0 : 20;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
