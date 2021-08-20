@@ -16,6 +16,7 @@
     
 }
 .singleproductscreen {
+    background: var(--white);
     height: 75vh;   
     max-width: 30vw;
     display: flex;
@@ -31,6 +32,7 @@
     
 }
 .compatInfo {
+    background: var(--white);
     margin-top: 10vh;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     height: 40vh;
