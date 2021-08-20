@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./PayPalScreen.css"
 
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"; 
 
@@ -30,28 +31,16 @@ return (
     {basket.length !== 0 && (
       <>
         <hr></hr>
-        <h3>Basket</h3>
-        <div>
-          <div>Items Price</div>
-          <div>£{itemsPrice.toFixed(2)}</div>
-        </div>
-        <div>
-          <div>Tax Price</div>
-          <div>£{taxPrice.toFixed(2)}</div>
-        </div>
-        <div>
-          <div>Shipping Price</div>
-          <div>£{shippingPrice.toFixed(2)}</div>
-        </div>
-
-        <div>
-          <div>
-            <strong>Total Price</strong>
-          </div>
-          <div>
-            <strong>£{totalPrice.toFixed(2)}</strong>
-          </div>
-          <div id="message"></div>
+        <div className="basket__items">
+              <p>Items Price</p>
+              £{itemsPrice.toFixed(2)}
+              <p>Tax Price</p>
+              £{taxPrice.toFixed(2)}
+              <p>Shipping Price</p>
+              £{shippingPrice.toFixed(2)}
+              <strong>Total Price</strong>
+              <strong>£{totalPrice.toFixed(2)}</strong>
+          <div className="popup__alert" id="message"></div>
         </div>
         <hr />
       </>
