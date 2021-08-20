@@ -1,4 +1,5 @@
 .cartscreen {
+  background: var(--white);
   max-width: 1300px;
   margin: 1rem auto;
   display: flex;
@@ -13,37 +14,82 @@
 }
 
 .cart {
-  background: var(--white);
-  width: 100%;
+  /* background: var(--one); */
+  width: 90%;
   margin: 1rem auto;
   display: flex;
   flex-direction: center;
   align-items: space-between;
+  text-align: center;
 }
 
-.delete {
-    width: 180px;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    background: var(--two);
-    color: var(--white);
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: none;
-    margin: 1rem;
-  }
-  
-  .delete:hover {
-    background: var(--one);
-    transition: ease-in-out 0.3s;
-  }
+.cart__items {
+  background: var(--two);
+  padding: 1rem;
+
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: space-between;
+}
+
+.cart__item {
+  background: var(--white);
+  width: 300px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: center;
+  justify-content: center;
+  text-align: center;
+  align-items: space-between;
+}
+
+.basket__items {
+  background: var(--three);
+  width: 400px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
 
 .remove {
   width: 180px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--two);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
+.remove:hover {
+  background: var(--one);
+  transition: ease-in-out 0.3s;
+}
+
+.control__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.decrease {
+  width: 60px;
   font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
@@ -58,28 +104,53 @@
   margin: 1rem;
 }
 
-.remove:hover {
+.decrease:hover {
   background: var(--three);
   transition: ease-in-out 0.3s;
 }
 
-.add {
-    width: 180px;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    background: var(--two);
-    color: var(--white);
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: none;
-    margin: 1rem;
-  }
-  
-  .add:hover {
-    background: var(--one);
-    transition: ease-in-out 0.3s;
-  }
+.increase {
+  width: 60px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: var(--two);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
+.increase:hover {
+  background: var(--one);
+  transition: ease-in-out 0.3s;
+}
+
+.padding {
+  padding-bottom: 20px;
+}
+
+.checkout__btn {
+  width: 180px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--two);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
+.checkout__btn:hover {
+  background: var(--one);
+  transition: ease-in-out 0.3s;
+}

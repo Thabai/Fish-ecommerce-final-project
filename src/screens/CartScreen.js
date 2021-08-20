@@ -52,22 +52,27 @@ const CartScreen = ({ user, basket, setBasket }) => {
       </div>
 
       <div className="cart">
-        <div>
-          {!user && <Redirect to="/login" />}
-          {basket.length === 0 && <div>Cart is empty</div>}
+        {!user && <Redirect to="/login" />}
+        {basket.length === 0 && <div>Cart is empty</div>}
+        <div className="cart__items">
           {basket.map((stock) => (
-            <div key={stock.id} className="row">
-              <div className="col-2">{stock.name}</div>
-              <div className="col-2">
-                <button onClick={() => handleRemove(stock)} className="delete">
-                  Delete from Basket
-                </button>
-                <button onClick={() => onMinus(stock)} className="remove">
+            <div className="cart__item" key={stock.id}>
+              <div>
+              <p>{stock.name}</p>
+              </div>
+              <div>
+              <button onClick={() => handleRemove(stock)} className="remove">
+                Remove from Basket
+              </button>
+              </div>
+              <div className="control__buttons">
+                <button onClick={() => onMinus(stock)} className="decrease">
                   -
                 </button>
-                <button onClick={() => onAdd(stock)} className="add">
+                <button onClick={() => onAdd(stock)} className="increase">
                   +
                 </button>
+                <div className=""></div>
               </div>
 
               <div className="col-2 text-right">
@@ -75,42 +80,25 @@ const CartScreen = ({ user, basket, setBasket }) => {
               </div>
             </div>
           ))}
-
-          {basket.length !== 0 && (
-            <>
-              <hr></hr>
-              <div className="row">
-                <div className="col-2">Items Price</div>
-                <div className="col-1 text-right">£{itemsPrice.toFixed(2)}</div>
-              </div>
-              <div className="row">
-                <div className="col-2">Tax Price</div>
-                <div className="col-1 text-right">£{taxPrice.toFixed(2)}</div>
-              </div>
-              <div className="row">
-                <div className="col-2">Shipping Price</div>
-                <div className="col-1 text-right">
-                  £{shippingPrice.toFixed(2)}
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-2">
-                  <strong>Total Price</strong>
-                </div>
-                <div className="col-1 text-right">
-                  <strong>£{totalPrice.toFixed(2)}</strong>
-                </div>
-              </div>
-              <hr />
-              <div className="row">
-                <button onClick={navigateTo} type="button">
-                  Checkout
-                </button>
-              </div>
-            </>
-          )}
         </div>
+
+        {basket.length !== 0 && (
+          <>
+            <div className="basket__items">
+              <p>Items Price</p>
+              £{itemsPrice.toFixed(2)}
+              <p>Tax Price</p>
+              £{taxPrice.toFixed(2)}
+              <p>Shipping Price</p>
+              £{shippingPrice.toFixed(2)}
+              <strong>Total Price</strong>
+              <strong>£{totalPrice.toFixed(2)}</strong>
+              <button className="checkout__btn" onClick={navigateTo} type="button">
+                Checkout
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
