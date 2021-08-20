@@ -160,7 +160,7 @@ export const createFish = async (
   description,
   temperature,
   temperament,
-  food,
+  foodsource,
   social,
   breeding,
   quantity,
@@ -173,7 +173,7 @@ export const createFish = async (
     let compatibility = {
       temperature: temperature,
       temperament: temperament,
-      foodsource: food,
+      foodsource: foodsource,
       social: social,
       breeding: breeding,
     };
