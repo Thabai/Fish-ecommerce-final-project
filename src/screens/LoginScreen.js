@@ -17,7 +17,9 @@ const LoginScreen = ({ user, setUser, admin, setAdmin, setUserFetch }) => {
   return (
      <div className="login">
       <div>
-        <p className="login__title">Welcome</p>
+        <div className="login__title">
+          <h2>Login</h2>
+          </div>
         <p className="login__note">Please Log in or Sign up</p>
       </div>
       <form

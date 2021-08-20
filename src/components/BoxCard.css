@@ -1,6 +1,23 @@
-.cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 5vw;
+.products__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1232px) {
+    .products__cards{
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+}
+
+@media (max-width: 950px) {
+    .products__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 630px) {
+    .products__cards {
+        grid-template-columns: 1fr;
+    }
 }
