@@ -35,9 +35,8 @@ const onAdd = (stock) => {
       </div>
       
       <div id="message"></div>
-      <div className="productsScreen__products">
+      
         <BoxCard stock={stock} onAdd={onAdd} />
-      </div>
     </div>
   );
 };

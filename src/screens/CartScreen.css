@@ -1,6 +1,85 @@
-.cart {
-    background: var(--white);
-    width: 40%;
-    margin: 0 auto;
-    padding-top: 80px;
+.cartscreen {
+  max-width: 1300px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.cart__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cart {
+  background: var(--white);
+  width: 100%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: center;
+  align-items: space-between;
+}
+
+.delete {
+    width: 180px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--two);
+    color: var(--white);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    margin: 1rem;
+  }
+  
+  .delete:hover {
+    background: var(--one);
+    transition: ease-in-out 0.3s;
+  }
+
+.remove {
+  width: 180px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: var(--four);
+  color: var(--white);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
+.remove:hover {
+  background: var(--three);
+  transition: ease-in-out 0.3s;
+}
+
+.add {
+    width: 180px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--two);
+    color: var(--white);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    margin: 1rem;
+  }
+  
+  .add:hover {
+    background: var(--one);
+    transition: ease-in-out 0.3s;
+  }

@@ -1,10 +1,11 @@
 import StockBox from "./stockBox";
 import React from "react";
+import "./BoxCard.css"
 
 
 const BoxCard = ({ stock, onAdd }) => {
   return (
-    <div className="cards">
+    <div className="products__cards">
       {stock.map((data, index) => {
         return <StockBox key={index} data={data} onAdd={onAdd} />;
       })}
