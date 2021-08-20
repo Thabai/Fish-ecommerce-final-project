@@ -42,7 +42,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
       setDesc(updateStock.fish.description);
       setTemperature(updateStock.fish.compatibility.temperature);
       setTemperament(updateStock.fish.compatibility.temperament);
-      setFood(updateStock.fish.compatibility.food);
+      setFood(updateStock.fish.compatibility.foodsource);
       setSocial(updateStock.fish.compatibility.social);
       setBreeding(updateStock.fish.compatibility.breeding);
       setQuant(updateStock.fish.quantity);
