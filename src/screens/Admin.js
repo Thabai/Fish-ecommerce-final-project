@@ -46,7 +46,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
       setSocial(updateStock.fish.compatibility.social);
       setBreeding(updateStock.fish.compatibility.breeding);
       setQuant(updateStock.fish.quantity);
-      setPrice(updateStock.fish.price);
+      setPrice(updateStock.fish.price.toFixed(2));
     } catch (error) {
       console.log(error);
     }
@@ -243,7 +243,7 @@ const Admin = ({ setUser, admin, setAdmin, setStock }) => {
           <p>{quant}</p>
           <input onChange={(e) => setQuant(e.target.value)} />
           <p className="admin__note">Price</p>
-          <p>{price}</p>
+          <p>£{price}</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
             placeholder="Price in 0.00 format"

@@ -68,7 +68,7 @@ const navigateTo = () => history.push("/paypal");
             </div>
 
             <div className="col-2 text-right">
-              {stock.qty} x ${stock.price.toFixed(2)}
+              {stock.qty} x £{stock.price.toFixed(2)}
             </div>
           </div>
         ))}
